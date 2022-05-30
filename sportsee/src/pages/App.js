@@ -1,25 +1,19 @@
-import logo from './../assets/logo.svg';
-import './../styles/App.css';
+import './../styles/App.css'
+import useFetch from './../services/Api/index.js';
+import { useState, useEffect } from 'react';
 
 function App() {
+  const { data, isLoading, hasError } = useFetch(`http://localhost:3000/user/18`)
+  console.log(data);
   return (
-    <div className="App">
+    <div className="App" >
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {data && (<p>there is data</p>)}
+        {isLoading && (<p>loading</p>)}
+        {hasError && (<p>there is an error</p>)}
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
