@@ -1,0 +1,17 @@
+@import './colors';
+
+.App-Error {
+    text-align: center;
+    font-size: 40px;
+    color: $red;
+    position: absolute;
+    top: 40vh;
+    right: 50%;
+    transform: translateX(50%);
+    &-code {
+        font-size: 130px;
+    }
+    &-text {
+        font-size: 40px;
+    }
+}

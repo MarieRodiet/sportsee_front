@@ -1,6 +1,7 @@
 import './../styles/App.scss'
 import useFetch from './../services/Api/index.js'
-import Nav from '../components/Nav'
+import Nav from '../components/Nav';
+import Error from '../components/Error';
 
 function App() {
   const { data, isLoading, hasError } = useFetch(
@@ -14,7 +15,7 @@ function App() {
 
       {isLoading && <p className="App-Loading">loading</p>}
 
-      {hasError && <p className="App-Error">there is an error</p>}
+      {hasError && <Error />}
     </div>
   )
 }
