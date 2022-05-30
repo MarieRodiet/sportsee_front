@@ -1,4 +1,4 @@
-import './../../styles/error.scss'
+import './../../styles/_error.scss'
 function Error() {
     return (
         <div className="App-Error">

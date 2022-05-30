@@ -1,8 +1,8 @@
-import './../styles/App.scss'
+import './../styles/_App.scss'
 import useFetch from './../services/Api/index.js'
 import Nav from '../components/Nav';
 import Error from '../components/Error';
-
+import Dashboard from '../components/Dashboard';
 function App() {
   const { data, isLoading, hasError } = useFetch(
     `http://localhost:3000/user/18`
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      {data && <div>there is data</div>}
+      {data && <Dashboard data={data}/>}
 
       {isLoading && <p className="App-Loading">loading</p>}
 

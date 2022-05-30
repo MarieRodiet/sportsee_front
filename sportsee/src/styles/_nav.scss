@@ -48,7 +48,7 @@
     }
     &-LeftNav {
         width: 117px;
-        height: 100vh;
+        height: calc(100vh - 91px);
         display: flex;
         flex-direction: column;
         padding: 0 26px;

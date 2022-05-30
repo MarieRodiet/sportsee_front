@@ -1,0 +1,65 @@
+@import './colors.scss';
+
+.App-Dashboard {
+    position: absolute;
+    top: 91px;
+    left: 115px;
+    width: calc(100% - 117px);
+    height: calc(100vh - 91px);
+    &-greeting {
+        padding: 70px 100px;
+        background-color: $white;
+        height: 300px;
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            display: inline-block;
+        }
+        h2 {
+            padding-top: 41px;
+            font-size: 18px;
+            font-weight: 400;
+            color: $darkGray;
+        }
+        &-name {
+            color: $red;
+        }
+    }
+
+    &-data {
+        background-color: aqua;
+        width: 100%;
+        height: calc(100vh - 391px);
+        display: grid;
+        grid-template-columns: repeat(4, 258px);
+        grid-template-rows: 300px 260px;
+        &-dailyActivity {
+            background-color: orange;
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+        &-charts {
+            background-color: yellow;
+            grid-column-start: 1;
+            grid-column-end: 4;
+
+            &-box {
+                width: 258px;
+                height: 263px;
+            }
+        }
+        &-keyData {
+            background-color: purple;
+            grid-column-start: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            height: 560px;
+            &-box {
+                width: 258px;
+                height: 124px;
+                margin: 10px 0;
+                background-color: $white;;
+            }
+        }
+    }
+}
