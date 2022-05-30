@@ -1,17 +1,20 @@
-import './../styles/App.css'
-import useFetch from './../services/Api/index.js';
-import { useState, useEffect } from 'react';
+import './../styles/App.scss'
+import useFetch from './../services/Api/index.js'
+import Nav from '../components/Nav'
 
 function App() {
-  const { data, isLoading, hasError } = useFetch(`http://localhost:3000/user/18`)
-  console.log(data);
+  const { data, isLoading, hasError } = useFetch(
+    `http://localhost:3000/user/18`
+  )
+
   return (
-    <div className="App" >
-      <header className="App-header">
-        {data && (<p>there is data</p>)}
-        {isLoading && (<p>loading</p>)}
-        {hasError && (<p>there is an error</p>)}
-      </header>
+    <div className="App">
+      <Nav />
+      {data && <div>there is data</div>}
+
+      {isLoading && <p className="App-Loading">loading</p>}
+
+      {hasError && <p className="App-Error">there is an error</p>}
     </div>
   )
 }
