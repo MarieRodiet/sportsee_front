@@ -6,17 +6,19 @@
     left: 115px;
     width: calc(100% - 117px);
     height: calc(100vh - 91px);
+    margin-left: 5px;
     @media (max-width: 1024px) {
         width: calc(100% - 100px);
         left: 100px;
     }
     &-greeting {
-        padding: 68px 0px 30px 100px;
+        padding: 60px 0px 30px 10%;
+
         background-color: $white;
         height: 230px;
         @media (max-width: 1024px) {
             margin-top: 10px;
-            padding: 50px 0px 20px 70px;
+            padding: 50px 0px 20px 9%;
             height: 200px;
         }
         h1 {
@@ -46,64 +48,78 @@
     }
 
     &-data {
-        background-color: aqua;
-        padding: 50px 0 50px 100px;
-        grid-gap: 1% 2%;
+        padding-left: 100px;
+        padding-top: 3%;
+        grid-gap: 2% 2vh;
         width: 100%;
         height: calc(100vh - 321px);
         display: grid;
         grid-template-columns: repeat(4, 22%);
-        grid-template-rows: 30vh 30vh;
+        grid-template-rows: 320px 263px;
+        @media (max-width: 1224px) {
+            padding-top: 0%;
+        }
         @media (max-width: 1024px) {
             height: calc(100vh - 300px);
+            grid-template-rows: 250px 200px;
+            padding-left: 80px;
+            padding-top: 0%;
         }
         //835/320px
         &-dailyActivity {
             width: 100%;
             max-width: 835px;
-            height: 320px;
+            height: 95%;
             background-color: orange;
             grid-column: 1/4;
             border-radius: 5px;
+            justify-self: center;
         }
         &-charts {
             width: 100%;
             max-width: 835px;
             grid-column: 1/4;
             display: flex;
+            height: 93%;
             justify-content: space-between;
             align-items: flex-end;
+            grid-gap: 1%;
+            justify-self: center;
 
             //258/263
             &-box {
+                align-self: start;
                 width: 100%;
                 max-width: 258px;
-                height: 263px;
-                background-color: yellow;
+                height: 95%;
+                background-color: skyblue;
                 border-radius: 5px;
+                @media (max-width: 1024px) {
+                    max-width: 200px;
+                }
             }
         }
         &-keyData {
             width: 100%;
             max-width: 258px;
-            height: fit-content;
-            grid-column: 4;
-            grid-row: 1;
+            height: 95%;
+            grid-column: 4/5;
+            grid-row: 1/3;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            justify-self: start;
             //258/124
             &-box {
                 width: 100%;
                 max-width: 258px;
-                height: 12vh;
-                max-height: 124px;
+                height: 124px;
                 background-color: $white;
                 border-radius: 5px;
-                background-color: white;
-            }
-            &-box:not(:first-child) {
-                margin-top: 20px;
+                background-color: purple;
+                @media (max-width: 1024px) {
+                    height: 104px;
+                }
             }
         }
     }
