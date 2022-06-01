@@ -6,59 +6,104 @@
     left: 115px;
     width: calc(100% - 117px);
     height: calc(100vh - 91px);
+    @media (max-width: 1024px) {
+        width: calc(100% - 100px);
+        left: 100px;
+    }
     &-greeting {
-        padding: 70px 100px;
+        padding: 68px 0px 30px 100px;
         background-color: $white;
-        height: 300px;
+        height: 230px;
+        @media (max-width: 1024px) {
+            margin-top: 10px;
+            padding: 50px 0px 20px 70px;
+            height: 200px;
+        }
         h1 {
             font-size: 48px;
             font-weight: 500;
             display: inline-block;
+            @media (max-width: 1024px) {
+                font-size: 42px;
+            }
         }
         h2 {
             padding-top: 41px;
             font-size: 18px;
             font-weight: 400;
             color: $darkGray;
+            @media (max-width: 1024px) {
+                font-size: 17px;
+                padding-top: 30px;
+            }
         }
         &-name {
             color: $red;
+            @media (max-width: 1024px) {
+                font-size: 42px;
+            }
         }
     }
 
     &-data {
         background-color: aqua;
+        padding: 50px 0 50px 100px;
+        grid-gap: 1% 2%;
         width: 100%;
-        height: calc(100vh - 391px);
+        height: calc(100vh - 321px);
         display: grid;
-        grid-template-columns: repeat(4, 258px);
-        grid-template-rows: 300px 260px;
+        grid-template-columns: repeat(4, 22%);
+        grid-template-rows: 30vh 30vh;
+        @media (max-width: 1024px) {
+            height: calc(100vh - 300px);
+        }
+        //835/320px
         &-dailyActivity {
+            width: 100%;
+            max-width: 835px;
+            height: 320px;
             background-color: orange;
-            grid-column-start: 1;
-            grid-column-end: 4;
+            grid-column: 1/4;
+            border-radius: 5px;
         }
         &-charts {
-            background-color: yellow;
-            grid-column-start: 1;
-            grid-column-end: 4;
+            width: 100%;
+            max-width: 835px;
+            grid-column: 1/4;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
 
+            //258/263
             &-box {
-                width: 258px;
+                width: 100%;
+                max-width: 258px;
                 height: 263px;
+                background-color: yellow;
+                border-radius: 5px;
             }
         }
         &-keyData {
-            background-color: purple;
-            grid-column-start: 4;
-            grid-row-start: 1;
-            grid-row-end: 2;
-            height: 560px;
+            width: 100%;
+            max-width: 258px;
+            height: fit-content;
+            grid-column: 4;
+            grid-row: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            //258/124
             &-box {
-                width: 258px;
-                height: 124px;
-                margin: 10px 0;
-                background-color: $white;;
+                width: 100%;
+                max-width: 258px;
+                height: 12vh;
+                max-height: 124px;
+                background-color: $white;
+                border-radius: 5px;
+                background-color: white;
+            }
+            &-box:not(:first-child) {
+                margin-top: 20px;
             }
         }
     }

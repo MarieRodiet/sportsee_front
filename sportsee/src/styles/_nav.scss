@@ -25,8 +25,8 @@
                 }
             }
             &-text {
-                padding-top: 40px;
-                padding-left: 5px;
+                padding-top: 33px;
+                padding-left: 6px;
                 color: $red;
             }
         }
@@ -40,6 +40,9 @@
                 font-size: 24px;
                 font-weight: 500;
                 text-decoration: none;
+                @media (max-width: 1024px) {
+                    font-size: 22px;
+                }
             }
             a:hover {
                 color: $red;
@@ -53,13 +56,22 @@
         flex-direction: column;
         padding: 0 26px;
 
+        @media (max-width: 1024px) {
+            width: 100px;
+            padding: 0 20px;
+        }
+
         &-Icons {
-            height: 600px;
+            height: 400px;
             width: fit-content;
             display: flex;
             flex-direction: column;
             align-content: space-around;
-            transform: translateY(220px);
+            transform: translateY(100px);
+            @media (max-width: 1024px) {
+                height: 300px;
+                transform: translateY(80px);
+            }
             &-Box {
                 cursor: pointer;
                 width: 64px;
@@ -70,6 +82,11 @@
                         fill: $black;
                     }
                 }
+                @media (max-width: 1024px) {
+                    width: 60px;
+                    height: 60px;
+                    margin: 8px 0;
+                }
             }
         }
         &-Text {
@@ -78,15 +95,23 @@
             color: $white;
             font-size: 12px;
             font-weight: 500;
-            transform: translate(-30px, 100px) rotate(-90deg);
+            transform: translateX(-30px) rotate(-90deg);
+            position: absolute;
+            bottom: 100px;
+            @media (max-width: 1024px) {
+            }
         }
     }
     &-White-Box {
+        box-shadow: inset 0px 5px 8px -4px rgb(0, 0, 0);
         background-color: $white;
         position: absolute;
         right: 0;
         left: 117px;
         top: 91px;
         bottom: 0;
+        @media (max-width: 1024px) {
+            left: 100px;
+        }
     }
 }
