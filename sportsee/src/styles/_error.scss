@@ -5,13 +5,24 @@
     font-size: 40px;
     color: $red;
     position: absolute;
-    top: 40vh;
+    top: 20vh;
     right: 50%;
+    font-weight: 200;
     transform: translateX(50%);
     &-code {
         font-size: 130px;
+        padding: 40px 100px;
     }
     &-text {
         font-size: 40px;
+        font-weight: 200;
+        padding: 10px 10px;
+    }
+    &-advice {
+        font-size: 30px;
+        font-weight: 200;
+        text-decoration: none;
+        display: block;
+        cursor: pointer;
     }
 }

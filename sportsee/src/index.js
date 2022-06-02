@@ -2,12 +2,17 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './styles/_index.scss'
 import App from './pages/App'
-import reportWebVitals from './reportWebVitals'
+import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <React.StrictMode>
-        <App />
+        <BrowserRouter>
+            <Routes>
+                <Route path="/user/:id" element={<App />} />
+            </Routes>
+        </BrowserRouter>
     </React.StrictMode>
 )
 
