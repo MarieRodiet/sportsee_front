@@ -10,16 +10,13 @@ import propTypes from 'prop-types';
 //LOCAL SERVER DATA
 // fetch(`http://localhost:3000/user/${id}`)
 
-function useFetch(id) {
+function useFetch(url, id) {
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(false)
     const [hasError, setError] = useState(false)
-    const mockedDataUrl = `/data/data-user${id}.json`;
-    const localServerUrl = `http://localhost:3000/user/${id}`;
-
     useEffect(() => {
         setLoading(true);
-        fetch(localServerUrl, {
+        fetch(url, {
             headers: {
                 'Content-Type': 'application/json',
                 Accept: 'application/json',
