@@ -2,15 +2,8 @@ import './../../styles/_dashboard.scss'
 import Macronutrients from './../Macronutrients'
 import ScorePieChart from '../ScorePieChart'
 import DailyActivityBarChart from '../DailyActivityBarChart'
-function Dashboard({ data }) {
-    // console.log('*******data.id: ********')
-    // console.log(data.id)
-    // console.log('*******data.score: ********')
-    // console.log(data.score)
-    // console.log('*******data.keyData: ********')
-    // console.log(data.keyData)
-    // console.log('*******data.userInfos: ********')
-    // console.log(data.userInfos)
+
+function Dashboard({data}) {
     return (
         <div className="App-Dashboard">
             <div className="App-Dashboard-greeting">

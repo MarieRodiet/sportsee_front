@@ -1,4 +1,4 @@
-function formatData(data) {
+export default function formatScore(data) {
 
     let newScore = -1
     if (data.hasOwnProperty('todayScore')) {
@@ -10,4 +10,4 @@ function formatData(data) {
     let formated = { ...data, score: newScore };
     return formated;
 }
-export default formatData;
+

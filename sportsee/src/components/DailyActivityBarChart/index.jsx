@@ -8,9 +8,13 @@ import {
     ResponsiveContainer,
     Legend,
 } from 'recharts'
+import { useParams } from 'react-router-dom'
+import useFetch from './../../services/Api/index.js'
+import Error from '../Error/index.jsx'
+import formatDailyActivity from '../../services/Formaters/formatDailyActivities.js'
 
 function DailyActivityBarChart() {
-    const data = [
+    const mockedData = [
         {
             name: 1,
             poids: 4000,
@@ -72,51 +76,58 @@ function DailyActivityBarChart() {
             amt: 2100,
         },
     ]
+    const { id } = useParams()
+    const mockedDataUrl = `/data/activity${id}.json`
+    const localServerUrl = `http://localhost:3000/user/${id}/activity`
+    const { data, isLoading, hasError } = useFetch(mockedDataUrl, id)
+    let formatedData = formatDailyActivity(data)
     return (
-        <ResponsiveContainer
-            width="100%"
-            height="100%"
-            className="App-Dashboard-data-dailyActivity"
-        >
-            <BarChart
-                width={500}
-                height={300}
-                data={data}
-                margin={{
-                    top: 5,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                }}
-            >
-                <CartesianGrid strokeDasharray="4 4" vertical={false} />
-                <Legend
-                    width={300}
-                    wrapperStyle={{
-                        top: 20,
-                        right: 10,
-                    }}
-                    radius={[10, 10, 0, 0]}
-                />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Bar
-                    name="Poids (kg)"
-                    dataKey="poids"
-                    fill="#282D30"
-                    radius={[10, 10, 0, 0]}
-                    barSize={10}
-                />
-                <Bar
-                    barSize={10}
-                    name="Calories brûlées (kCal)"
-                    dataKey="calories"
-                    fill="#E60000"
-                    radius={[10, 10, 0, 0]}
-                />
-            </BarChart>
-        </ResponsiveContainer>
+        <div className="App-Dashboard-data-dailyActivity">
+            {data ? (
+                <ResponsiveContainer width="100%" height="100%">
+                    <BarChart
+                        width={500}
+                        height={300}
+                        data={mockedData}
+                        margin={{
+                            top: 5,
+                            right: 30,
+                            left: 20,
+                            bottom: 5,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="4 4" vertical={false} />
+                        <Legend
+                            width={300}
+                            wrapperStyle={{
+                                top: 20,
+                                right: 10,
+                            }}
+                            radius={[10, 10, 0, 0]}
+                        />
+                        <XAxis dataKey="name" />
+                        <YAxis />
+                        <Tooltip />
+                        <Bar
+                            name="Poids (kg)"
+                            dataKey="poids"
+                            fill="#282D30"
+                            radius={[10, 10, 0, 0]}
+                            barSize={10}
+                        />
+                        <Bar
+                            barSize={10}
+                            name="Calories brûlées (kCal)"
+                            dataKey="calories"
+                            fill="#E60000"
+                            radius={[10, 10, 0, 0]}
+                        />
+                    </BarChart>
+                </ResponsiveContainer>
+            ) : hasError ? (
+                <Error />
+            ) : null}
+        </div>
     )
 }
 export default DailyActivityBarChart

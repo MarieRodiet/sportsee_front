@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import propTypes from 'prop-types';
-import formatData from '../Formater';
+
 
 function useFetch(url, id) {
     const [data, setData] = useState(null)
@@ -16,16 +16,15 @@ function useFetch(url, id) {
         })
             .then((response) => response.json())
             .then((actualData) => {
-                let formatedData = formatData(actualData.data)
-                console.log(formatedData)
-                actualData === "can not get user" ? setError(true) : setData(formatedData);
+                actualData === "can not get user" ? setError(true) : setData(actualData.data);
+                console.log(actualData)
             })
             .catch((err) => {
                 console.log(err.message);
                 setError(true)
             })
             .finally(() => setLoading(false))
-    }, [id])
+    }, [])
     return { data, isLoading, hasError }
 }
 export default useFetch
