@@ -5,17 +5,18 @@
     top: 91px;
     left: 110px;
     width: calc(100% - 115px);
-    height: calc(100vh - 85px);
+    height: calc(100vh - 100px);
     margin-left: 5px;
     @media (max-width: 1024px) {
-        width: calc(100% - 110px);
+        width: calc(100% - 105px);
         height: calc(100vh - 95px);
         left: 100px;
     }
     &-greeting {
-        box-shadow: 4px 0px 10px 4px $white;
+        //box-shadow: 4px 0px 10px 4px $white;
         margin-top: 10px;
-        background-color: $white;
+        margin-left: 2px;
+
         padding: 60px 0px 30px 10%;
         height: 230px;
         @media (max-width: 1024px) {
@@ -51,7 +52,6 @@
     }
 
     &-data {
-        background-color: $white;
         padding-left: 100px;
         padding-top: 3%;
         grid-gap: 2% 2vh;
@@ -89,19 +89,8 @@
             align-items: flex-end;
             grid-gap: 1%;
             justify-self: center;
-
-            //258/263
-            &-box {
-                align-self: start;
-                width: 100%;
-                max-width: 258px;
-                height: 95%;
-                background-color: skyblue;
-                border-radius: 5px;
-                @media (max-width: 1024px) {
-                    max-width: 200px;
-                }
-            }
+            padding-bottom: 10px;
+            
         }
         &-keyData {
             width: 100%;
@@ -114,17 +103,7 @@
             justify-content: space-between;
             justify-self: start;
             //258/124
-            &-box {
-                width: 100%;
-                max-width: 258px;
-                height: 124px;
-                background-color: $white;
-                border-radius: 5px;
-                background-color: purple;
-                @media (max-width: 1024px) {
-                    height: 104px;
-                }
-            }
+
         }
     }
 }

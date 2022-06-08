@@ -7,7 +7,6 @@ import { useParams } from 'react-router-dom';
 
 function App() {
   const { id } = useParams();
-  console.log(id);
   const mockedDataUrl = `/data/data-user${id}.json`;
   const localServerUrl = `http://localhost:3000/user/${id}`;
 

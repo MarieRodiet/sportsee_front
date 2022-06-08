@@ -1,0 +1,66 @@
+@import './colors.scss';
+
+.App-Dashboard-data-charts {
+    //258/263
+    &-box {
+        position: relative;
+        align-self: start;
+        width: 100%;
+        max-width: 258px;
+        height: 100%;
+        background-color: $lightBg;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media (max-width: 1024px) {
+            max-width: 200px;
+        }
+        &-whiteCircle {
+            position: absolute;
+            background-color: $white;
+            width: 130px;
+            height: 130px;
+            margin-top: 10px;
+            border-radius: 140px;
+            
+        }
+        &-title {
+            position: absolute;
+            top: 2vh;
+            left: 10%;
+            font-size: 15px;
+            font-weight: 500;
+            color: #20253a;
+        }
+        &-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: calc(100% - 140px);
+            text-align: center;
+            @media (max-width: 1024px) {
+                top: calc(100% - 110px);
+            }
+            &-percent {
+                padding-bottom: 5px;
+                font-size: 24px;
+                font-weight: 700;
+                color: $black;
+            }
+            &-objectif {
+                color: $gray;
+                font-weight: 500;
+                font-size: 14px;
+            }
+        }
+        &-pieChart {
+            svg {
+                .recharts-layer recharts-pie-sector {
+                    color: $white;
+                }
+            }
+        }
+    }
+}

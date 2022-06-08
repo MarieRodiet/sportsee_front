@@ -1,14 +1,6 @@
 import { useState, useEffect } from 'react';
 import propTypes from 'prop-types';
-/**
- * design pattern facade pour faire des
- * requetes avec a la fois le local
- * et le backend
- */
-//MOCKED DATA
-//fetch(`/data/data-user${id}.json`, {
-//LOCAL SERVER DATA
-// fetch(`http://localhost:3000/user/${id}`)
+import formatData from '../Formater';
 
 function useFetch(url, id) {
     const [data, setData] = useState(null)
@@ -24,8 +16,8 @@ function useFetch(url, id) {
         })
             .then((response) => response.json())
             .then((actualData) => {
-                console.log(actualData);
-                actualData === "can not get user" ? setError(true) : setData(actualData.data);
+                let formatedData = formatData(actualData.data)
+                actualData === "can not get user" ? setError(true) : setData(formatedData);
             })
             .catch((err) => {
                 console.log(err.message);
@@ -39,5 +31,6 @@ export default useFetch
 
 useFetch.propTypes = {
     id: propTypes.number.isRequired,
+    url: propTypes.string.isRequired
 };
 

@@ -1,14 +1,15 @@
 import './../../styles/_dashboard.scss'
-
+import Macronutrients from './../Macronutrients'
+import ScorePieChart from '../ScorePieChart'
 function Dashboard({ data }) {
-    console.log('*******data.id: ********')
-    console.log(data.id)
-    console.log('*******data.score: ********')
-    console.log(data.score)
-    console.log('*******data.keyData: ********')
-    console.log(data.keyData)
-    console.log('*******data.userInfos: ********')
-    console.log(data.userInfos)
+    // console.log('*******data.id: ********')
+    // console.log(data.id)
+    // console.log('*******data.score: ********')
+    // console.log(data.score)
+    // console.log('*******data.keyData: ********')
+    // console.log(data.keyData)
+    // console.log('*******data.userInfos: ********')
+    // console.log(data.userInfos)
     return (
         <div className="App-Dashboard">
             <div className="App-Dashboard-greeting">
@@ -23,14 +24,9 @@ function Dashboard({ data }) {
                 <div className="App-Dashboard-data-charts">
                     <div className="App-Dashboard-data-charts-box"></div>
                     <div className="App-Dashboard-data-charts-box"></div>
-                    <div className="App-Dashboard-data-charts-box"></div>
+                    <ScorePieChart score={data.score} />
                 </div>
-                <div className="App-Dashboard-data-keyData">
-                    <div className="App-Dashboard-data-keyData-box"></div>
-                    <div className="App-Dashboard-data-keyData-box"></div>
-                    <div className="App-Dashboard-data-keyData-box"></div>
-                    <div className="App-Dashboard-data-keyData-box"></div>
-                </div>
+                <Macronutrients macronutrients={data.keyData} />
             </div>
         </div>
     )
