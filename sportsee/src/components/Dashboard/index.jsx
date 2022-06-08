@@ -1,6 +1,7 @@
 import './../../styles/_dashboard.scss'
 import Macronutrients from './../Macronutrients'
 import ScorePieChart from '../ScorePieChart'
+import DailyActivityBarChart from '../DailyActivityBarChart'
 function Dashboard({ data }) {
     // console.log('*******data.id: ********')
     // console.log(data.id)
@@ -20,7 +21,7 @@ function Dashboard({ data }) {
                 <h2>Félicitation ! Vous avez explosé vos objectifs hier 👏</h2>
             </div>
             <div className="App-Dashboard-data">
-                <div className="App-Dashboard-data-dailyActivity"></div>
+                    <DailyActivityBarChart />
                 <div className="App-Dashboard-data-charts">
                     <div className="App-Dashboard-data-charts-box"></div>
                     <div className="App-Dashboard-data-charts-box"></div>
