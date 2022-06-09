@@ -7,7 +7,7 @@
         font-size: 20px;
         position: relative;
         top: 10px;
-        left: 32px;
+        left: 38px;
     }
     .custom-tooltip {
         position: relative;
@@ -15,10 +15,10 @@
         right: -10px;
         background-color: #e60000;
         color: $white;
-        font-size: 15px;
+        font-size: 10px;
         font-weight: 500;
         text-align: center;
-        padding: 10px;
+        padding: 10px 5px;
         &-desc {
             padding-top: 10px;
         }

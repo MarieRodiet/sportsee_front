@@ -1,5 +1,11 @@
-export default function formatDailyActivity(data) {
-    let formated = { ...data, day: "00" };
+export default function formatDailyActivity(sessions) {
 
+    function format(object) {
+        let date = new Date(object["day"])
+        let formated = { ...object, day: date.getDate() }
+        return formated
+    }
+
+    let formated = sessions.map(element => format(element))
     return formated;
 }
