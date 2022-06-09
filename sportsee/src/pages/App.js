@@ -10,7 +10,7 @@ function App() {
   const mockedDataUrl = `/data/data-user${id}.json`;
   const localServerUrl = `http://localhost:3000/user/${id}`;
 
-  const { data, isLoading, hasError } = useFetch(localServerUrl, id);
+  const { data, isLoading, hasError } = useFetch(mockedDataUrl, id);
   return (
     <div className="App">
       <Nav />

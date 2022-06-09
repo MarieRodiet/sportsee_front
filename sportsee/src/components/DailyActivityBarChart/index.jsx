@@ -12,68 +12,44 @@ import { useParams } from 'react-router-dom'
 import useFetch from './../../services/Api/index.js'
 import Error from '../Error/index.jsx'
 import formatDailyActivity from '../../services/Formaters/formatDailyActivities.js'
-
+import propTypes from 'prop-types'
+import './../../styles/_dailyActivities.scss'
 function DailyActivityBarChart() {
     const mockedData = [
         {
-            name: 1,
-            poids: 4000,
-            calories: 2400,
-            amt: 2400,
+            kilogram: 80,
+            calories: 240,
+            day: '1',
         },
         {
-            name: '2',
-            poids: 3000,
-            calories: 1398,
-            amt: 2210,
+            kilogram: 80,
+            calories: 220,
+            day: '2',
         },
         {
-            name: '3',
-            poids: 2000,
-            calories: 9800,
-            amt: 2290,
+            kilogram: 81,
+            calories: 280,
+            day: '3',
         },
         {
-            name: '4',
-            poids: 2780,
-            calories: 3908,
-            amt: 2000,
+            kilogram: 81,
+            calories: 290,
+            day: '4',
         },
         {
-            name: '5',
-            poids: 1890,
-            calories: 4800,
-            amt: 2181,
+            kilogram: 80,
+            calories: 160,
+            day: '5',
         },
         {
-            name: '6',
-            poids: 2390,
-            calories: 3800,
-            amt: 2500,
+            kilogram: 78,
+            calories: 162,
+            day: '6',
         },
         {
-            name: '7',
-            poids: 3490,
-            calories: 4300,
-            amt: 2100,
-        },
-        {
-            name: '8',
-            poids: 3490,
-            calories: 4300,
-            amt: 2100,
-        },
-        {
-            name: '9',
-            poids: 3490,
-            calories: 4300,
-            amt: 2100,
-        },
-        {
-            name: '10',
-            poids: 3490,
-            calories: 4300,
-            amt: 2100,
+            kilogram: 76,
+            calories: 390,
+            day: '7',
         },
     ]
     const { id } = useParams()
@@ -86,31 +62,61 @@ function DailyActivityBarChart() {
             {data ? (
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart
+                        barGap={6}
                         width={500}
                         height={300}
                         data={mockedData}
                         margin={{
-                            top: 5,
-                            right: 30,
+                            top: 30,
+                            right: 20,
                             left: 20,
-                            bottom: 5,
+                            bottom: 0,
                         }}
                     >
-                        <CartesianGrid strokeDasharray="4 4" vertical={false} />
+                        <CartesianGrid strokeDasharray="3 3" vertical={false} />
                         <Legend
+                            iconType="circle"
+                            align="right"
+                            iconSize="8"
                             width={300}
                             wrapperStyle={{
-                                top: 20,
-                                right: 10,
+                                top: -10,
+                                right: 30,
                             }}
-                            radius={[10, 10, 0, 0]}
                         />
-                        <XAxis dataKey="name" />
-                        <YAxis />
-                        <Tooltip />
+                        <XAxis
+                            dataKey="day"
+                            tickLine={false}
+                            dy={10}
+                            stroke="#9B9EAC"
+                        />
+                        <YAxis
+                            dataKey="kilogram"
+                            stroke="#9B9EAC"
+                            orientation="right"
+                            domain={['dataMin -2', 'dataMax + 1']}
+                            axisLine={false}
+                            tickLine={false}
+                            allowDataOverflow={true}
+                            dx={10}
+                            dy={-4}
+                        />
+                        <YAxis
+                            dataKey="calories"
+                            stroke="#9B9EAC"
+                            orientation="left"
+                            domain={['dataMin -20', 'dataMax + 20']}
+                            axisLine={false}
+                            tickLine={false}
+                            allowDataOverflow={true}
+                            dx={-10}
+                            dy={-4}
+                        />
+
+                        <Tooltip content={<CustomTooltip />} />
                         <Bar
                             name="Poids (kg)"
-                            dataKey="poids"
+                            dataKey="kilogram"
                             fill="#282D30"
                             radius={[10, 10, 0, 0]}
                             barSize={10}
@@ -131,3 +137,22 @@ function DailyActivityBarChart() {
     )
 }
 export default DailyActivityBarChart
+
+const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+        return (
+            <div className="custom-tooltip">
+                <p className="custom-tooltip-label">{`${payload[0].value}`}</p>
+                <p className="custom-tooltip-desc">{`${payload[1].value}`}</p>
+            </div>
+        )
+    }
+
+    return null
+}
+
+CustomTooltip.propTypes = {
+    active: propTypes.bool,
+    payload: propTypes.array,
+    label: propTypes.string,
+}

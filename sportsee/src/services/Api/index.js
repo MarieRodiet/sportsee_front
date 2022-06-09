@@ -17,10 +17,8 @@ function useFetch(url, id) {
             .then((response) => response.json())
             .then((actualData) => {
                 actualData === "can not get user" ? setError(true) : setData(actualData.data);
-                console.log(actualData)
             })
             .catch((err) => {
-                console.log(err.message);
                 setError(true)
             })
             .finally(() => setLoading(false))
