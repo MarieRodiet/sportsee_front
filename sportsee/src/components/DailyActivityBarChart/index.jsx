@@ -83,8 +83,8 @@ function DailyActivityBarChart() {
                             iconSize="8"
                             width={300}
                             wrapperStyle={{
-                                top: 5,
-                                right: 30,
+                                top: -10,
+                                right: 20,
                             }}
                         />
                         <XAxis
