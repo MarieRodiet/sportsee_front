@@ -8,7 +8,7 @@ function ScorePieChart(score) {
     ]
     const COLORS = [' #ff0101', '#ffffff']
     return (
-        <div className="App-Dashboard-data-charts-box">
+        <div className="App-Dashboard-data-charts-score">
             <div className="App-Dashboard-data-charts-box-whiteCircle"></div>
             <p className="App-Dashboard-data-charts-box-title">Score</p>
             <div className="App-Dashboard-data-charts-box-details">

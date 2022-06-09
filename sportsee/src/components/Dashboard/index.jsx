@@ -1,9 +1,11 @@
 import './../../styles/_dashboard.scss'
+
 import Macronutrients from './../Macronutrients'
 import ScorePieChart from '../ScorePieChart'
 import DailyActivityBarChart from '../DailyActivityBarChart'
+import AverageRadarChart from '../AverageRadarChart'
 
-function Dashboard({data}) {
+function Dashboard({ data }) {
     return (
         <div className="App-Dashboard">
             <div className="App-Dashboard-greeting">
@@ -14,10 +16,10 @@ function Dashboard({data}) {
                 <h2>Félicitation ! Vous avez explosé vos objectifs hier 👏</h2>
             </div>
             <div className="App-Dashboard-data">
-                    <DailyActivityBarChart />
+                <DailyActivityBarChart />
                 <div className="App-Dashboard-data-charts">
-                    <div className="App-Dashboard-data-charts-box"></div>
-                    <div className="App-Dashboard-data-charts-box"></div>
+                    <div className="App-Dashboard-data-charts-average"></div>
+                    <AverageRadarChart />
                     <ScorePieChart score={data.score} />
                 </div>
                 <Macronutrients macronutrients={data.keyData} />

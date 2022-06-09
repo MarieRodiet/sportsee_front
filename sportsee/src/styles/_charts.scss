@@ -2,7 +2,10 @@
 
 .App-Dashboard-data-charts {
     //258/263
-    &-box {
+    &-box,
+    &-performance,
+    &-average,
+    &-score {
         position: relative;
         align-self: start;
         width: 100%;
@@ -23,7 +26,6 @@
             height: 130px;
             margin-top: 10px;
             border-radius: 140px;
-            
         }
         &-title {
             position: absolute;
@@ -62,5 +64,9 @@
                 }
             }
         }
+    }
+    &-performance {
+        background-color: #282d30;
+
     }
 }
