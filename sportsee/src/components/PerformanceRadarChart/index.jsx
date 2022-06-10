@@ -8,16 +8,20 @@ import {
 } from 'recharts'
 import './../../styles/_averageRadarChart.scss'
 import './../../styles/_charts.scss'
-import useFetch from '../../services/Api'
+import useFetch from '../../services/Api/useFetch'
 import { useParams } from 'react-router-dom'
-import Error from '../Error'
 import formatPerformance from '../../services/Formaters/formatPerformance'
 
-export default function PerformanceRadarChart() {
+export default function PerformanceRadarChart({ urlForUseFetch }) {
     const { id } = useParams()
-    const mockedDataUrl = `/data/user/${id}/performance.json`
-    const localServerUrl = `http://localhost:3000/user/${id}/performance`
-    const { data, isLoading, hasError } = useFetch(mockedDataUrl, id)
+    let url = ''
+    if (urlForUseFetch.includes('http://localhost')) {
+        url = `${urlForUseFetch}${id}/performance`
+    } else {
+        url = `${urlForUseFetch}${id}/performance.json`
+    }
+
+    const { data, isLoading, hasError } = useFetch(url, "performance")
 
     let formatedData = data && formatPerformance(data['data'])
 
@@ -54,7 +58,7 @@ export default function PerformanceRadarChart() {
                     </RadarChart>
                 </ResponsiveContainer>
             ) : hasError ? (
-                <Error />
+                <p>Error</p>
             ) : isLoading ? (
                 <p>it is loading</p>
             ) : null}

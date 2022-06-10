@@ -12,6 +12,7 @@
     align-items: center;
     @media (max-width: 1024px) {
         height: 104px;
+        padding-left: 20px;
     }
     &-icon {
         width: 60px;
@@ -20,6 +21,9 @@
     }
     &-data {
         padding-left: 20px;
+        @media (max-width: 1024px) {
+            padding-left: 12px;
+        }
         &-nb {
             padding-bottom: 3px;
             color: $black;

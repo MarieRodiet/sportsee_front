@@ -4,22 +4,25 @@ import {
     Line,
     XAxis,
     YAxis,
-    CartesianGrid,
     Tooltip,
-    Legend,
     ResponsiveContainer,
 } from 'recharts'
-import useFetch from '../../services/Api'
-import Error from './../Error'
+import useFetch from '../../services/Api/useFetch'
 import formatAverage from '../../services/Formaters/formatAverage'
 import './../../styles/_charts.scss'
 import propTypes from 'prop-types'
 
-export default function AverageLineChart() {
+export default function AverageLineChart({ urlForUseFetch }) {
     const { id } = useParams()
-    const mockedDataUrl = `/data/user/${id}/average.json`
-    const localServerUrl = `http://localhost:3000/user/${id}/average`
-    const { data, isLoading, hasError } = useFetch(mockedDataUrl, id)
+    let url = ''
+    if (urlForUseFetch.includes('http://localhost')) {
+        url = `${urlForUseFetch}${id}/average-sessions`
+    } else {
+        url = `${urlForUseFetch}${id}/average.json`
+    }
+    console.log(url)
+    const { data, isLoading, hasError } = useFetch(url, 'average')
+
     const formated = data && formatAverage(data['sessions'])
 
     return (
@@ -65,7 +68,7 @@ export default function AverageLineChart() {
                     </LineChart>
                 </ResponsiveContainer>
             ) : hasError ? (
-                <Error />
+                <p>Error</p>
             ) : isLoading ? (
                 <p>it is loading</p>
             ) : null}

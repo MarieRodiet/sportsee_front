@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import propTypes from 'prop-types';
 
-export default function useFetch(url) {
+export default function useFetch(url, dataKind) {
+    console.log(dataKind);
+    
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(false)
     const [hasError, setError] = useState(false)

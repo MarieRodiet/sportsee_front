@@ -9,17 +9,22 @@ import {
     Legend,
 } from 'recharts'
 import { useParams } from 'react-router-dom'
-import useFetch from './../../services/Api/index.js'
+import useFetch from '../../services/Api/useFetch.js'
 import Error from '../Error/index.jsx'
 import formatDailyActivity from '../../services/Formaters/formatDailyActivities.js'
 import propTypes from 'prop-types'
 import './../../styles/_dailyActivities.scss'
 
-export default function DailyActivityBarChart() {
+export default function DailyActivityBarChart({ urlForUseFetch }) {
     const { id } = useParams()
-    const mockedDataUrl = `/data/user/${id}/activity.json`
-    const localServerUrl = `http://localhost:3000/user/${id}/activity`
-    const { data, isLoading, hasError } = useFetch(mockedDataUrl, id)
+    let url = ''
+
+    if (urlForUseFetch.includes('http://localhost')) {
+        url = `${urlForUseFetch}${id}/activity`
+    } else {
+        url = `${urlForUseFetch}${id}/activity.json`
+    }
+    const { data, isLoading, hasError } = useFetch(url, "activity")
     let formatedData = data && formatDailyActivity(data['sessions'])
     return (
         <div className="App-Dashboard-data-dailyActivity">
