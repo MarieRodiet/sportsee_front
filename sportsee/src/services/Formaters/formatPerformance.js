@@ -1,3 +1,5 @@
+import propTypes from 'prop-types';
+
 export default function formatPerformance(data) {
     const category = [
         'Intensité',
@@ -11,6 +13,9 @@ export default function formatPerformance(data) {
         let index = object["kind"]
         return { ...object, kind: category[index - 1] }
     }
-    let formated = data.map((element) => addLabel(element))
-    return formated;
+    return data.map((element) => addLabel(element))
+}
+
+formatPerformance.propTypes = {
+    data: propTypes.array.isRequired
 }

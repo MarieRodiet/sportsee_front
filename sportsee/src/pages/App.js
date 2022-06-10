@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 import formatScore from '../services/Formaters/formatScore.js';
 function App() {
   const { id } = useParams();
-  const mockedDataUrl = `/data/data-user${id}.json`;
+  const mockedDataUrl = `/data/user/${id}.json`;
   const localServerUrl = `http://localhost:3000/user/${id}`;
 
   const { data, isLoading, hasError } = useFetch(mockedDataUrl, id);

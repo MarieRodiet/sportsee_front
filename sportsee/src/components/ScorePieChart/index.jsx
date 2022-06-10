@@ -1,7 +1,8 @@
-import { PieChart, Pie, Sector, Cell } from 'recharts'
+import { PieChart, Pie, Cell } from 'recharts'
 import './../../styles/_charts.scss'
+import propTypes from 'prop-types'
 
-function ScorePieChart(score) {
+export default function ScorePieChart(score) {
     const data = [
         { name: 'score', value: score.score },
         { name: 'rest', value: 100 - score.score },
@@ -46,4 +47,6 @@ function ScorePieChart(score) {
         </div>
     )
 }
-export default ScorePieChart
+ScorePieChart.propTypes = {
+    score: propTypes.number,
+}

@@ -1,6 +1,6 @@
 import './../../styles/_nav.scss'
 
-function Nav() {
+export default function Nav() {
     return (
         <>
             <nav className="App-Nav">
@@ -184,4 +184,3 @@ function Nav() {
         </>
     )
 }
-export default Nav

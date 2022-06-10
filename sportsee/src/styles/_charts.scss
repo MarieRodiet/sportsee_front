@@ -67,6 +67,30 @@
     }
     &-performance {
         background-color: #282d30;
-
+        .recharts-text recharts-polar-angle-axis-tick-value {
+            tspan {
+                font-size: 20px;
+            }
+        }
+    }
+    &-average {
+        background-color: $red;
+        &-title {
+            color: $white;
+            max-width: 150px;
+            height: fit-content;
+            font-size: 15;
+            font-weight: 500;
+        }
+        .custom-tooltip {
+            background-color: $white;
+            width: 40px;
+            text-align: center;
+            padding: 7px 5px;
+            &-label {
+                font-size: 8px;
+                font-weight: 500;
+            }
+        }
     }
 }

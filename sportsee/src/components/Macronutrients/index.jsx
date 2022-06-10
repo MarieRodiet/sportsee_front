@@ -3,8 +3,9 @@ import { ReactComponent as CaloriesIcon } from './../../assets/calories-icon.svg
 import { ReactComponent as FatIcon } from './../../assets/fat-icon.svg'
 import { ReactComponent as ProteinIcon } from './../../assets/protein-icon.svg'
 import { ReactComponent as CarbsIcon } from './../../assets/carbs-icon.svg'
+import propTypes from 'prop-types'
 
-function Macronutrients(macronutrients) {
+export default function Macronutrients(macronutrients) {
     const data = macronutrients.macronutrients
     return (
         <div className="App-Dashboard-data-keyData">
@@ -68,4 +69,7 @@ function Macronutrients(macronutrients) {
         </div>
     )
 }
-export default Macronutrients
+
+Macronutrients.propTypes = {
+    macronutrients: propTypes.object,
+}

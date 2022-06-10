@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import propTypes from 'prop-types';
 
-
-function useFetch(url, id) {
+export default function useFetch(url) {
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(false)
     const [hasError, setError] = useState(false)
@@ -25,10 +24,8 @@ function useFetch(url, id) {
     }, [])
     return { data, isLoading, hasError }
 }
-export default useFetch
 
 useFetch.propTypes = {
-    id: propTypes.number.isRequired,
     url: propTypes.string.isRequired
 };
 

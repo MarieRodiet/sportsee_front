@@ -1,3 +1,5 @@
+import propTypes from 'prop-types';
+
 export default function formatScore(data) {
 
     let newScore = -1
@@ -7,7 +9,10 @@ export default function formatScore(data) {
     else {
         newScore = data.score * 100;
     }
-    let formated = { ...data, score: newScore };
-    return formated;
+    return { ...data, score: newScore };
+}
+
+formatScore.propTypes = {
+    data: propTypes.object.isRequired
 }
 

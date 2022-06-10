@@ -3,8 +3,8 @@ import './../../styles/_dashboard.scss'
 import Macronutrients from './../Macronutrients'
 import ScorePieChart from '../ScorePieChart'
 import DailyActivityBarChart from '../DailyActivityBarChart'
-import AverageRadarChart from '../AverageRadarChart'
-
+import PerformanceRadarChart from '../PerformanceRadarChart'
+import AverageLineChart from '../AverageLineChart';
 function Dashboard({ data }) {
     return (
         <div className="App-Dashboard">
@@ -18,8 +18,8 @@ function Dashboard({ data }) {
             <div className="App-Dashboard-data">
                 <DailyActivityBarChart />
                 <div className="App-Dashboard-data-charts">
-                    <div className="App-Dashboard-data-charts-average"></div>
-                    <AverageRadarChart />
+                    <AverageLineChart />
+                    <PerformanceRadarChart />
                     <ScorePieChart score={data.score} />
                 </div>
                 <Macronutrients macronutrients={data.keyData} />

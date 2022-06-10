@@ -15,13 +15,12 @@ import formatDailyActivity from '../../services/Formaters/formatDailyActivities.
 import propTypes from 'prop-types'
 import './../../styles/_dailyActivities.scss'
 
-function DailyActivityBarChart() {
+export default function DailyActivityBarChart() {
     const { id } = useParams()
-    const mockedDataUrl = `/data/activity${id}.json`
+    const mockedDataUrl = `/data/user/${id}/activity.json`
     const localServerUrl = `http://localhost:3000/user/${id}/activity`
     const { data, isLoading, hasError } = useFetch(mockedDataUrl, id)
     let formatedData = data && formatDailyActivity(data['sessions'])
-    console.log(formatedData)
     return (
         <div className="App-Dashboard-data-dailyActivity">
             <p className="App-Dashboard-data-dailyActivity-title">
@@ -101,11 +100,12 @@ function DailyActivityBarChart() {
                 </ResponsiveContainer>
             ) : hasError ? (
                 <Error />
+            ) : isLoading ? (
+                <p>it is loading</p>
             ) : null}
         </div>
     )
 }
-export default DailyActivityBarChart
 
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {

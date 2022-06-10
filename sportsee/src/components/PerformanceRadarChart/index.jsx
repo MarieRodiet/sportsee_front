@@ -7,65 +7,43 @@ import {
     ResponsiveContainer,
 } from 'recharts'
 import './../../styles/_averageRadarChart.scss'
+import './../../styles/_charts.scss'
 import useFetch from '../../services/Api'
 import { useParams } from 'react-router-dom'
+import Error from '../Error'
 import formatPerformance from '../../services/Formaters/formatPerformance'
 
-function AverageRadarChart() {
-    const mockedData = [
-        {
-            subject: 'intensity',
-            value: 90,
-        },
-        {
-            subject: 'speed',
-            value: 200,
-        },
-        {
-            subject: 'strength',
-            value: 50,
-        },
-        {
-            subject: 'endurance',
-            value: 140,
-        },
-        {
-            subject: 'energy',
-            value: 120,
-        },
-        {
-            subject: 'cardio',
-            value: 80,
-        },
-    ]
+export default function PerformanceRadarChart() {
     const { id } = useParams()
-    const mockedDataUrl = `/data/performance${id}.json`
+    const mockedDataUrl = `/data/user/${id}/performance.json`
     const localServerUrl = `http://localhost:3000/user/${id}/performance`
     const { data, isLoading, hasError } = useFetch(mockedDataUrl, id)
 
     let formatedData = data && formatPerformance(data['data'])
-    console.log('formatedData')
-    console.log(formatedData)
+
     return (
         <div className="App-Dashboard-data-charts-performance">
-            {formatedData && (
+            {formatedData ? (
                 <ResponsiveContainer
                     width="90%"
                     height="90%"
-                    className="App-Dashboard-data-charts-box-chart"
+                    className="App-Dashboard-data-charts-performance-container"
                 >
                     <RadarChart
-                        cx="50%"
-                        cy="50%"
-                        outerRadius="80%"
+                        className="App-Dashboard-data-charts-performance-container-radar"
                         data={formatedData}
+                        outerRadius="67%"
                     >
+                        {/* <RadarChart outerRadius="60%" data={formatedData}>*/}
                         <PolarGrid stroke="#FFFFFF" radialLines={false} />
                         <PolarAngleAxis
                             dataKey="kind"
                             stroke="#FFFFFF"
                             axisLine={false}
                             tickLine={false}
+                            //tick={{ fontSize: '0.5rem' }}
+                            tick={{ fontSize: '0.7em' }}
+                            dy={5}
                         />
                         <PolarRadiusAxis tick={false} axisLine={false} />
                         <Radar
@@ -75,8 +53,11 @@ function AverageRadarChart() {
                         />
                     </RadarChart>
                 </ResponsiveContainer>
-            )}
+            ) : hasError ? (
+                <Error />
+            ) : isLoading ? (
+                <p>it is loading</p>
+            ) : null}
         </div>
     )
 }
-export default AverageRadarChart

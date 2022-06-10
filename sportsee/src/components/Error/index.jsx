@@ -1,6 +1,6 @@
 import './../../styles/_error.scss'
 import { Link } from 'react-router-dom'
-function Error() {
+export default function Error() {
     return (
         <div className="App-Error">
             <h1 className="App-Error-code">404</h1>
@@ -15,4 +15,3 @@ function Error() {
         </div>
     )
 }
-export default Error
