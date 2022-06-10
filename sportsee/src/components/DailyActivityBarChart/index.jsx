@@ -17,14 +17,11 @@ import './../../styles/_dailyActivities.scss'
 
 export default function DailyActivityBarChart({ urlForUseFetch }) {
     const { id } = useParams()
-    let url = ''
-
-    if (urlForUseFetch.includes('http://localhost')) {
-        url = `${urlForUseFetch}${id}/activity`
-    } else {
-        url = `${urlForUseFetch}${id}/activity.json`
-    }
-    const { data, isLoading, hasError } = useFetch(url, "activity")
+    const { data, isLoading, hasError } = useFetch(
+        urlForUseFetch,
+        'activity',
+        id
+    )
     let formatedData = data && formatDailyActivity(data['sessions'])
     return (
         <div className="App-Dashboard-data-dailyActivity">

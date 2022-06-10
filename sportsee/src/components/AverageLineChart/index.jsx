@@ -14,15 +14,11 @@ import propTypes from 'prop-types'
 
 export default function AverageLineChart({ urlForUseFetch }) {
     const { id } = useParams()
-    let url = ''
-    if (urlForUseFetch.includes('http://localhost')) {
-        url = `${urlForUseFetch}${id}/average-sessions`
-    } else {
-        url = `${urlForUseFetch}${id}/average.json`
-    }
-    console.log(url)
-    const { data, isLoading, hasError } = useFetch(url, 'average')
-
+    const { data, isLoading, hasError } = useFetch(
+        urlForUseFetch,
+        'average',
+        id
+    )
     const formated = data && formatAverage(data['sessions'])
 
     return (

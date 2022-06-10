@@ -9,14 +9,9 @@ import Error from '../Error'
 import useFetch from '../../services/Api/useFetch.js'
 import formatScore from './../../services/Formaters/formatScore.js'
 function Dashboard({ urlForUseFetch }) {
+    console.log()
     const { id } = useParams()
-    let url = ''
-    if (urlForUseFetch.includes('http://localhost')) {
-        url = `${urlForUseFetch}${id}`
-    } else {
-        url = `${urlForUseFetch}${id}.json`
-    }
-    const { data, isLoading, hasError } = useFetch(url, "user")
+    const { data, isLoading, hasError } = useFetch(urlForUseFetch, '', id)
     const formated = data && formatScore(data)
     return (
         <div className="App-Dashboard">

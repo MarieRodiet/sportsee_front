@@ -14,14 +14,12 @@ import formatPerformance from '../../services/Formaters/formatPerformance'
 
 export default function PerformanceRadarChart({ urlForUseFetch }) {
     const { id } = useParams()
-    let url = ''
-    if (urlForUseFetch.includes('http://localhost')) {
-        url = `${urlForUseFetch}${id}/performance`
-    } else {
-        url = `${urlForUseFetch}${id}/performance.json`
-    }
 
-    const { data, isLoading, hasError } = useFetch(url, "performance")
+    const { data, isLoading, hasError } = useFetch(
+        urlForUseFetch,
+        'performance',
+        id
+    )
 
     let formatedData = data && formatPerformance(data['data'])
 
