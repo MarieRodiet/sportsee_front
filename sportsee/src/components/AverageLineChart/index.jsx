@@ -6,15 +6,17 @@ import {
     YAxis,
     Tooltip,
     ResponsiveContainer,
+    Rectangle,
 } from 'recharts'
 import useFetch from '../../services/Api/useFetch'
 import formatAverage from '../../services/Formaters/formatAverage'
 import './../../styles/_charts.scss'
+import './../../styles/_averageLineChart.scss'
 import propTypes from 'prop-types'
 
 /**
- * 
- * @param {string}  urlForUseFetch 
+ *
+ * @param {string}  urlForUseFetch
  * @returns jsx with LineChart using fetched data
  */
 export default function AverageLineChart({ urlForUseFetch }) {
@@ -34,14 +36,12 @@ export default function AverageLineChart({ urlForUseFetch }) {
             {formated ? (
                 <ResponsiveContainer width="100%" height="100%">
                     <LineChart
-                        width={500}
-                        height={300}
                         data={formated}
                         margin={{
-                            top: 50,
-                            right: 20,
-                            left: 20,
-                            bottom: 20,
+                            top: 40,
+                            right: 10,
+                            left: 10,
+                            bottom: 15,
                         }}
                     >
                         <XAxis
@@ -54,10 +54,7 @@ export default function AverageLineChart({ urlForUseFetch }) {
                         <YAxis axisLine={false} tickLine={false} hide={true} />
                         <Tooltip
                             content={<CustomTooltip />}
-                            cursor={{
-                                stroke: '#E50000',
-                                strokeWidth: 2,
-                            }}
+                            cursor={<CustomCursor />}
                         />
                         <Line
                             type="monotone"
@@ -87,6 +84,22 @@ const CustomTooltip = ({ active, payload }) => {
     }
 
     return null
+}
+
+const CustomCursor = (props) => {
+    const { points, width, height, stroke } = props
+    const { x, y } = points[0]
+    const { x1, y1 } = points[1]
+    return (
+        <Rectangle
+            fill="#E50000"
+            stroke="#E50000"
+            x={x}
+            y={y - 40}
+            width={width + 30}
+            height={height + 45}
+        />
+    )
 }
 
 AverageLineChart.propTypes = {

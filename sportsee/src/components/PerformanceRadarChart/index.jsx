@@ -6,16 +6,15 @@ import {
     PolarRadiusAxis,
     ResponsiveContainer,
 } from 'recharts'
-import './../../styles/_averageRadarChart.scss'
+import './../../styles/_performanceRadarChart.scss'
 import './../../styles/_charts.scss'
 import useFetch from '../../services/Api/useFetch'
 import { useParams } from 'react-router-dom'
 import formatPerformance from '../../services/Formaters/formatPerformance'
 import propTypes from 'prop-types'
 import Macronutrients from '../Macronutrients'
-
 /**
- * 
+ *
  * @param {string} urlForUseFetch
  * @returns jsx with RadarChart
  */
@@ -32,23 +31,21 @@ export default function PerformanceRadarChart({ urlForUseFetch }) {
         <div className="App-Dashboard-data-charts-performance">
             {formatedData ? (
                 <ResponsiveContainer
-                    width="90%"
-                    height="90%"
+                    width="100%"
+                    height="100%"
                     className="App-Dashboard-data-charts-performance-container"
                 >
                     <RadarChart
                         className="App-Dashboard-data-charts-performance-container-radar"
                         data={formatedData}
-                        outerRadius="67%"
+                        outerRadius="65%"
                     >
-                        {/* <RadarChart outerRadius="60%" data={formatedData}>*/}
                         <PolarGrid stroke="#FFFFFF" radialLines={false} />
                         <PolarAngleAxis
                             dataKey="kind"
                             stroke="#FFFFFF"
                             axisLine={false}
                             tickLine={false}
-                            //tick={{ fontSize: '0.5rem' }}
                             tick={{ fontSize: '0.7em' }}
                             dy={5}
                         />
