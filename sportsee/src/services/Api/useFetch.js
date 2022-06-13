@@ -31,52 +31,11 @@ useFetch.propTypes = {
 };
 
 function getUrl(url, dataKind, id) {
-    console.log(url)
-    console.log(dataKind)
-    //http://localhost:3000/user/id/datakind
-    let toFetch = "";
     if (url.includes('http://localhost')) {
-        switch (dataKind) {
-            case "": {
-                toFetch = "";
-            }
-                break;
-            case "activity": {
-                toFetch = "/activity";
-            }
-                break;
-            case "average": {
-                toFetch = "/average-sessions";
-            }
-                break;
-            case "performance": {
-                toFetch = "/performance";
-            }
-                break;
-            default:
-        }
+        return dataKind === "" ? url + id : url + id + "/" + dataKind;
     } else {
-        switch (dataKind) {
-            case "": {
-                toFetch = ".json";
-            }
-                break;
-            case "activity": {
-                toFetch = "/activity.json";
-            }
-                break;
-            case "average": {
-                toFetch = "/average.json";
-            }
-                break;
-            case "performance": {
-                toFetch = "/performance.json";
-            }
-                break;
-            default: return ""
-        }
+        return dataKind === "" ? url + id + ".json" : url + id + "/" + dataKind + ".json";
     }
-    return url + id + toFetch;
 }
 
 
