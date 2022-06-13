@@ -1,7 +1,11 @@
 import { PieChart, Pie, Cell } from 'recharts'
 import './../../styles/_charts.scss'
 import propTypes from 'prop-types'
-
+/**
+ *
+ * @param {object} score
+ * @returns PieChart with formated score data
+ */
 export default function ScorePieChart(score) {
     const data = [
         { name: 'score', value: score.score },

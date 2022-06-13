@@ -8,13 +8,21 @@ import { useParams } from 'react-router-dom'
 import Error from '../Error'
 import useFetch from '../../services/Api/useFetch.js'
 import formatScore from './../../services/Formaters/formatScore.js'
+import propTypes from 'prop-types'
+
+/**
+ *
+ * @param {string} urlForUseFetch
+ * @returns all dashboard jsx components fetching data
+ */
 function Dashboard({ urlForUseFetch }) {
-    console.log()
     const { id } = useParams()
     const { data, isLoading, hasError } = useFetch(urlForUseFetch, '', id)
+    //wait for data to be true before formatting
     const formated = data && formatScore(data)
     return (
         <div className="App-Dashboard">
+            {/* wait for formated to be true before rendering */}
             {formated ? (
                 <>
                     <div className="App-Dashboard-greeting">
@@ -51,3 +59,7 @@ function Dashboard({ urlForUseFetch }) {
     )
 }
 export default Dashboard
+
+Dashboard.propTypes = {
+    urlForUseFetch: propTypes.string.isRequired,
+}

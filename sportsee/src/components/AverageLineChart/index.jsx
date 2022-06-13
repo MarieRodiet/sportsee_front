@@ -12,11 +12,16 @@ import formatAverage from '../../services/Formaters/formatAverage'
 import './../../styles/_charts.scss'
 import propTypes from 'prop-types'
 
+/**
+ * 
+ * @param {string}  urlForUseFetch 
+ * @returns jsx with LineChart using fetched data
+ */
 export default function AverageLineChart({ urlForUseFetch }) {
     const { id } = useParams()
     const { data, isLoading, hasError } = useFetch(
         urlForUseFetch,
-        'average',
+        'average-sessions',
         id
     )
     const formated = data && formatAverage(data['sessions'])
@@ -82,6 +87,10 @@ const CustomTooltip = ({ active, payload }) => {
     }
 
     return null
+}
+
+AverageLineChart.propTypes = {
+    urlForUseFetch: propTypes.string.isRequired,
 }
 
 CustomTooltip.propTypes = {

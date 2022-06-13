@@ -1,6 +1,13 @@
 import { useState, useEffect } from 'react';
 import propTypes from 'prop-types';
 
+/**
+ * 
+ * @param {string} url - come from getRightUrl() so either "http:localhost:3000/user" OR "data/user/"
+ * @param {string} dataKind - "" OR "performance" OR "activity" OR "average-sessions"
+ * @param {number} id - 12 OR 18 for userId
+ * @returns object {data, isLoading, hasError}
+ */
 export default function useFetch(url, dataKind, id) {
     let toFetch = getUrl(url, dataKind, id)
     const [data, setData] = useState(null)
@@ -26,16 +33,22 @@ export default function useFetch(url, dataKind, id) {
     return { data, isLoading, hasError }
 }
 
-useFetch.propTypes = {
-    url: propTypes.string.isRequired
-};
-
 function getUrl(url, dataKind, id) {
     if (url.includes('http://localhost')) {
         return dataKind === "" ? url + id : url + id + "/" + dataKind;
     } else {
         return dataKind === "" ? url + id + ".json" : url + id + "/" + dataKind + ".json";
     }
+}
+
+useFetch.propTypes = {
+    url: propTypes.string.isRequired
+};
+
+getUrl.propTypes = {
+    url: propTypes.string.isRequired,
+    id: propTypes.number.isRequired,
+    dataKind: propTypes.string.isRequired
 }
 
 

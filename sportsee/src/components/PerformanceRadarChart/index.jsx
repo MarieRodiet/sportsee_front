@@ -11,16 +11,21 @@ import './../../styles/_charts.scss'
 import useFetch from '../../services/Api/useFetch'
 import { useParams } from 'react-router-dom'
 import formatPerformance from '../../services/Formaters/formatPerformance'
+import propTypes from 'prop-types'
+import Macronutrients from '../Macronutrients'
 
+/**
+ * 
+ * @param {string} urlForUseFetch
+ * @returns jsx with RadarChart
+ */
 export default function PerformanceRadarChart({ urlForUseFetch }) {
     const { id } = useParams()
-
     const { data, isLoading, hasError } = useFetch(
         urlForUseFetch,
         'performance',
         id
     )
-
     let formatedData = data && formatPerformance(data['data'])
 
     return (
@@ -56,10 +61,14 @@ export default function PerformanceRadarChart({ urlForUseFetch }) {
                     </RadarChart>
                 </ResponsiveContainer>
             ) : hasError ? (
-                <p>Error</p>
+                <p>There is an error</p>
             ) : isLoading ? (
                 <p>it is loading</p>
             ) : null}
         </div>
     )
+}
+
+Macronutrients.propTypes = {
+    macronutrients: propTypes.object.isRequired,
 }

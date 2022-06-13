@@ -1,5 +1,10 @@
 import propTypes from 'prop-types';
 
+/**
+ * 
+ * @param {array} data - data coming from useFetch on server
+ * @returns an array of formatedObject which day property is modified with first letter of week names
+ */
 export default function formatAverage(data) {
     const days = [
         'L',

@@ -1,16 +1,16 @@
 import './../styles/_App.scss'
 import Nav from '../components/Nav';
 import Dashboard from '../components/Dashboard';
-import getRightUrl from '../services/Api/getRightUrl.js';
 
 function App() {
-  const isMockedUrl = true;
-  const url = getRightUrl(isMockedUrl);
+  //TRUE => data for all 4 useFetch from local server
+  //FALSE => data for all 4 useFetch from within project folder
+  const isMockedUrl = false;
 
   return (
     <div className="App">
       <Nav />
-      <Dashboard urlForUseFetch={url} />
+      <Dashboard urlForUseFetch={isMockedUrl ? "/data/user/" : "http://localhost:3000/user/"} />
     </div>
   )
 }

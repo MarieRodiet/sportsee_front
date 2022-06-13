@@ -1,9 +1,14 @@
 import './../../styles/_nav.scss'
 
+/**
+ * 
+ * @returns jsx with top and left navigation bars
+ */
 export default function Nav() {
     return (
         <>
             <nav className="App-Nav">
+                {/* TOPNAV */}
                 <div className="App-Nav-TopNav">
                     <div className="App-Nav-TopNav-Logo">
                         <div className="App-Nav-TopNav-Logo-container">
@@ -80,6 +85,7 @@ export default function Nav() {
                         <a href="https://google.com">Communauté</a>
                     </nav>
                 </div>
+                {/* LEFTNAV */}
                 <div className="App-Nav-LeftNav">
                     <div className="App-Nav-LeftNav-Icons">
                         {/* YOGA */}

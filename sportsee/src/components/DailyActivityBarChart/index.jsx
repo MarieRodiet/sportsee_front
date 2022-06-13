@@ -14,7 +14,13 @@ import Error from '../Error/index.jsx'
 import formatDailyActivity from '../../services/Formaters/formatDailyActivities.js'
 import propTypes from 'prop-types'
 import './../../styles/_dailyActivities.scss'
+import AverageLineChart from '../AverageLineChart/index.jsx'
 
+/**
+ * 
+ * @param {string} urlForUseFetch
+ * @returns jsx with BarChart using fetched data
+ */
 export default function DailyActivityBarChart({ urlForUseFetch }) {
     const { id } = useParams()
     const { data, isLoading, hasError } = useFetch(
@@ -127,4 +133,8 @@ const CustomTooltip = ({ active, payload }) => {
 CustomTooltip.propTypes = {
     active: propTypes.bool,
     payload: propTypes.array,
+}
+
+AverageLineChart.propTypes = {
+    urlForUseFetch: propTypes.string.isRequired,
 }

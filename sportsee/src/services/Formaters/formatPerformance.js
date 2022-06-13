@@ -1,5 +1,9 @@
 import propTypes from 'prop-types';
 
+/**
+ * @param {array} data - data coming from useFetch on server
+ * @returns a array with a property kind from category array
+ */
 export default function formatPerformance(data) {
     const category = [
         'Intensité',

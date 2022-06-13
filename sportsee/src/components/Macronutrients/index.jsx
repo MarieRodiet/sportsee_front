@@ -5,6 +5,11 @@ import { ReactComponent as ProteinIcon } from './../../assets/protein-icon.svg'
 import { ReactComponent as CarbsIcon } from './../../assets/carbs-icon.svg'
 import propTypes from 'prop-types'
 
+/**
+ * 
+ * @param {object} macronutrients 
+ * @returns jsx with fetched data
+ */
 export default function Macronutrients(macronutrients) {
     const data = macronutrients.macronutrients
     return (

@@ -1,5 +1,9 @@
 import './../../styles/_error.scss'
 import { Link } from 'react-router-dom'
+/**
+ *
+ * @returns jsx for displaying Error when fetching data has failed
+ */
 export default function Error() {
     return (
         <div className="App-Error">
