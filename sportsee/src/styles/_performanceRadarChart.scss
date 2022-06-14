@@ -1,3 +1,12 @@
 .App-Dashboard-data-charts-performance {
     position: relative;
+    font-size: 1.2em;
+    @media (max-width: 1024px) {
+        font-size: 0.8em;
+    }
+    // .recharts-wrapper,
+    // .App-Dashboard-data-charts-performance-container-radar {
+    //     .recharts-surface {
+    //     }
+    // }
 }
