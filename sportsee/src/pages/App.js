@@ -5,7 +5,7 @@ import Dashboard from '../components/Dashboard';
 function App() {
   //TRUE => data for all 4 useFetch from local server
   //FALSE => data for all 4 useFetch from within project folder
-  const isMockedUrl = false;
+  const isMockedUrl = true;
 
   return (
     <div className="App">

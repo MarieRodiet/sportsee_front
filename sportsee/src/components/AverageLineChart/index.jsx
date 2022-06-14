@@ -82,14 +82,12 @@ const CustomTooltip = ({ active, payload }) => {
             </div>
         )
     }
-
     return null
 }
 
 const CustomCursor = (props) => {
-    const { points, width, height, stroke } = props
+    const { points, width, height } = props
     const { x, y } = points[0]
-    const { x1, y1 } = points[1]
     return (
         <Rectangle
             fill="#E50000"
@@ -109,4 +107,8 @@ AverageLineChart.propTypes = {
 CustomTooltip.propTypes = {
     active: propTypes.bool,
     payload: propTypes.array,
+}
+
+CustomCursor.propTypes = {
+    props: propTypes.object,
 }
