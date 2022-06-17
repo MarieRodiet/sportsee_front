@@ -1,8 +1,15 @@
+@import './colors.scss';
 .App-Dashboard-data-charts-performance {
     position: relative;
     font-size: 1.2em;
     @media (max-width: 1024px) {
         font-size: 0.8em;
+    }
+    &-error {
+        color: $white;
+        font-weight: 700;
+        font-size: 2em;
+        text-align: center;
     }
     // .recharts-wrapper,
     // .App-Dashboard-data-charts-performance-container-radar {

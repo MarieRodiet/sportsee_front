@@ -10,7 +10,6 @@ import {
 } from 'recharts'
 import { useParams } from 'react-router-dom'
 import useFetch from '../../services/Api/useFetch.js'
-import Error from '../Error/index.jsx'
 import formatDailyActivity from '../../services/Formaters/formatDailyActivities.js'
 import propTypes from 'prop-types'
 import './../../styles/_dailyActivities.scss'
@@ -107,7 +106,7 @@ export default function DailyActivityBarChart({ urlForUseFetch }) {
                     </BarChart>
                 </ResponsiveContainer>
             ) : hasError ? (
-                <Error />
+                <p className="App-Dashboard-data-dailyActivity-error">Error</p>
             ) : isLoading ? (
                 <p>it is loading</p>
             ) : null}

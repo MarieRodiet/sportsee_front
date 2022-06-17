@@ -58,7 +58,9 @@ export default function PerformanceRadarChart({ urlForUseFetch }) {
                     </RadarChart>
                 </ResponsiveContainer>
             ) : hasError ? (
-                <p>There is an error</p>
+                <p className="App-Dashboard-data-charts-performance-error">
+                    There is an error
+                </p>
             ) : isLoading ? (
                 <p>it is loading</p>
             ) : null}

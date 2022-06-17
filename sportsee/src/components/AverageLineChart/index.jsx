@@ -66,7 +66,7 @@ export default function AverageLineChart({ urlForUseFetch }) {
                     </LineChart>
                 </ResponsiveContainer>
             ) : hasError ? (
-                <p>Error</p>
+                <p className="App-Dashboard-data-charts-average-error">Error</p>
             ) : isLoading ? (
                 <p>it is loading</p>
             ) : null}

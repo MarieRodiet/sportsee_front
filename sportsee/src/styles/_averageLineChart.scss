@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 .App-Dashboard-data-charts-average {
     position: relative;
     &-title {
@@ -9,5 +11,10 @@
     .recharts-rectangle {
         position: absolute;
         z-index: -4;
+    }
+    &-error {
+        color: $white;
+        font-weight: 700;
+        font-size: 2em;
     }
 }
