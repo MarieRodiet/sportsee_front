@@ -6,8 +6,8 @@ import { ReactComponent as CarbsIcon } from './../../assets/carbs-icon.svg'
 import propTypes from 'prop-types'
 
 /**
- * 
- * @param {object} macronutrients 
+ *
+ * @param {object} macronutrients
  * @returns jsx with fetched data
  */
 export default function Macronutrients(macronutrients) {
@@ -16,59 +16,69 @@ export default function Macronutrients(macronutrients) {
         <div className="App-Dashboard-data-keyData">
             {Object.keys(data).map(function (property) {
                 return (
-                    <div
-                        key={data[property]}
-                        className="App-Dashboard-data-keyData-box"
-                    >
-                        <div className="App-Dashboard-data-keyData-box-icon">
-                            {property === 'calorieCount' ? (
-                                <CaloriesIcon />
-                            ) : property === 'lipidCount' ? (
-                                <FatIcon />
-                            ) : property === 'proteinCount' ? (
-                                <ProteinIcon />
-                            ) : property === 'carbohydrateCount' ? (
-                                <CarbsIcon />
-                            ) : null}
-                        </div>
+                    <>
                         {property === 'calorieCount' ? (
-                            <div className="App-Dashboard-data-keyData-box-data">
-                                <p className="App-Dashboard-data-keyData-box-data-nb">
-                                    {data[property].toLocaleString()}kCal
-                                </p>
-                                <p className="App-Dashboard-data-keyData-box-data-type">
-                                    Calories
-                                </p>
+                            <div
+                                key={data[property]}
+                                className="App-Dashboard-data-keyData-box"
+                            >
+                                <CaloriesIcon />
+                                <div className="App-Dashboard-data-keyData-box-data">
+                                    <p className="App-Dashboard-data-keyData-box-data-nb">
+                                        {data[property].toLocaleString()}kCal
+                                    </p>
+                                    <p className="App-Dashboard-data-keyData-box-data-type">
+                                        Calories
+                                    </p>
+                                </div>
                             </div>
                         ) : property === 'lipidCount' ? (
-                            <div className="App-Dashboard-data-keyData-box-data">
-                                <p className="App-Dashboard-data-keyData-box-data-nb">
-                                    {data[property]}g
-                                </p>
-                                <p className="App-Dashboard-data-keyData-box-data-type">
-                                    Lipides
-                                </p>
+                            <div
+                                key={data[property]}
+                                className="App-Dashboard-data-keyData-box"
+                            >
+                                <FatIcon />
+                                <div className="App-Dashboard-data-keyData-box-data">
+                                    <p className="App-Dashboard-data-keyData-box-data-nb">
+                                        {data[property]}g
+                                    </p>
+                                    <p className="App-Dashboard-data-keyData-box-data-type">
+                                        Lipides
+                                    </p>
+                                </div>
                             </div>
                         ) : property === 'proteinCount' ? (
-                            <div className="App-Dashboard-data-keyData-box-data">
-                                <p className="App-Dashboard-data-keyData-box-data-nb">
-                                    {data[property]}g
-                                </p>
-                                <p className="App-Dashboard-data-keyData-box-data-type">
-                                    Proteines
-                                </p>
+                            <div
+                                key={data[property]}
+                                className="App-Dashboard-data-keyData-box"
+                            >
+                                <ProteinIcon />
+                                <div className="App-Dashboard-data-keyData-box-data">
+                                    <p className="App-Dashboard-data-keyData-box-data-nb">
+                                        {data[property]}g
+                                    </p>
+                                    <p className="App-Dashboard-data-keyData-box-data-type">
+                                        Proteines
+                                    </p>
+                                </div>
                             </div>
                         ) : property === 'carbohydrateCount' ? (
-                            <div className="App-Dashboard-data-keyData-box-data">
-                                <p className="App-Dashboard-data-keyData-box-data-nb">
-                                    {data[property]}g
-                                </p>
-                                <p className="App-Dashboard-data-keyData-box-data-type">
-                                    Glucides
-                                </p>
+                            <div
+                                key={data[property]}
+                                className="App-Dashboard-data-keyData-box"
+                            >
+                                <CarbsIcon />
+                                <div className="App-Dashboard-data-keyData-box-data">
+                                    <p className="App-Dashboard-data-keyData-box-data-nb">
+                                        {data[property]}g
+                                    </p>
+                                    <p className="App-Dashboard-data-keyData-box-data-type">
+                                        Glucides
+                                    </p>
+                                </div>
                             </div>
                         ) : null}
-                    </div>
+                    </>
                 )
             })}
         </div>
