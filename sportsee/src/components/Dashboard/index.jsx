@@ -7,7 +7,7 @@ import AverageLineChart from '../AverageLineChart'
 import { useParams } from 'react-router-dom'
 import Error from '../Error'
 import useFetch from '../../services/Api/useFetch.js'
-import formatScore from './../../services/Formaters/formatScore.js'
+import formatData from './../../services/Formaters/formatData.js'
 import propTypes from 'prop-types'
 
 /**
@@ -19,7 +19,7 @@ function Dashboard({ urlForUseFetch }) {
     const { id } = useParams()
     const { data, isLoading, hasError } = useFetch(urlForUseFetch, '', id)
     //wait for data to be true before formatting
-    const formated = data && formatScore(data)
+    const formated = data && formatData(data)
     return (
         <div className="App-Dashboard">
             {/* wait for formated to be true before rendering */}
