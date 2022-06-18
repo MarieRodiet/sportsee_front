@@ -1,12 +1,18 @@
 # SportSee 
 ---
- ### Projet 12 - Web Development Javascript | React 
+ ##### Projet 12 - Web Development Javascript | React 
 
 ![dashboard](./sportsee/dashboard.png)
 
-## General Information &nbsp; ℹ️
+### General Information &nbsp; ℹ️
 
 This project is set up using data fetched from JSON files located inside the public/data folder. This way, you only need the FRONT END and therefore only need to follow the first part of instructions below. If you would like to use the data from your local server, then keep reading and configurating! 🚀
+
+### Prerequisite &nbsp; ℹ️
+- NPM v8.5.5
+- NodeJS v16.15.0 OR YARN
+- VSCode
+- Git
 
 ## Launching the FRONT END project
 
