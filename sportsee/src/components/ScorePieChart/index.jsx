@@ -13,21 +13,23 @@ export default function ScorePieChart(score) {
     ]
     const COLORS = [' #ff0101', '#ffffff']
     return (
-        <div className="App-Dashboard-data-charts-score">
-            <div className="App-Dashboard-data-charts-box-whiteCircle"></div>
-            <p className="App-Dashboard-data-charts-box-title">Score</p>
-            <div className="App-Dashboard-data-charts-box-details">
-                <p className="App-Dashboard-data-charts-box-details-percent">
+        <div className="App-Dashboard-container-data-recharts-charts-score">
+            <div className="App-Dashboard-container-data-recharts-charts-box-whiteCircle"></div>
+            <p className="App-Dashboard-container-data-recharts-charts-box-title">
+                Score
+            </p>
+            <div className="App-Dashboard-container-data-recharts-charts-box-details">
+                <p className="App-Dashboard-container-data-recharts-charts-box-details-percent">
                     {score.score}%
                 </p>
-                <p className="App-Dashboard-data-charts-box-details-objectif">
+                <p className="App-Dashboard-container-data-recharts-charts-box-details-objectif">
                     de votre objectif
                 </p>
             </div>
             <PieChart
                 width={200}
                 height={170}
-                className="App-Dashboard-data-charts-box-pieChart"
+                className="App-Dashboard-container-data-recharts-charts-box-pieChart"
             >
                 <Pie
                     data={data}

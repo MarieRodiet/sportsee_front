@@ -29,8 +29,8 @@ export default function AverageLineChart({ urlForUseFetch }) {
     const formated = data && formatAverage(data['sessions'])
 
     return (
-        <div className="App-Dashboard-data-charts-average">
-            <p className="App-Dashboard-data-charts-average-title">
+        <div className="App-Dashboard-container-data-recharts-charts-average">
+            <p className="App-Dashboard-container-data-recharts-charts-average-title">
                 Durée moyenne des sessions
             </p>
             {formated ? (
@@ -66,7 +66,9 @@ export default function AverageLineChart({ urlForUseFetch }) {
                     </LineChart>
                 </ResponsiveContainer>
             ) : hasError ? (
-                <p className="App-Dashboard-data-charts-average-error">Error</p>
+                <p className="App-Dashboard-container-data-recharts-charts-average-error">
+                    Error
+                </p>
             ) : isLoading ? (
                 <p>it is loading</p>
             ) : null}

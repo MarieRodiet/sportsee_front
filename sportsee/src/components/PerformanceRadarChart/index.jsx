@@ -28,15 +28,15 @@ export default function PerformanceRadarChart({ urlForUseFetch }) {
     let formatedData = data && formatPerformance(data['data'])
 
     return (
-        <div className="App-Dashboard-data-charts-performance">
+        <div className="App-Dashboard-container-data-recharts-charts-performance">
             {formatedData ? (
                 <ResponsiveContainer
                     width="100%"
                     height="100%"
-                    className="App-Dashboard-data-charts-performance-container"
+                    className="App-Dashboard-container-data-recharts-charts-performance-container"
                 >
                     <RadarChart
-                        className="App-Dashboard-data-charts-performance-container-radar"
+                        className="App-Dashboard-container-data-recharts-charts-performance-container-radar"
                         data={formatedData}
                         outerRadius="65%"
                     >
@@ -58,7 +58,7 @@ export default function PerformanceRadarChart({ urlForUseFetch }) {
                     </RadarChart>
                 </ResponsiveContainer>
             ) : hasError ? (
-                <p className="App-Dashboard-data-charts-performance-error">
+                <p className="App-Dashboard-container-data-recharts-charts-performance-error">
                     There is an error
                 </p>
             ) : isLoading ? (

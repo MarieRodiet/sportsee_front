@@ -12,20 +12,20 @@ import { PropTypes } from 'prop-types'
  */
 export default function Macronutrients({ macronutrients }) {
     return (
-        <div className="App-Dashboard-data-keyData">
+        <div className="App-Dashboard-container-data-keyData">
             {macronutrients.map((element) => (
                 <div key={element['kind']}>
                     {element['kind'] === 'Calories' ? (
                         <div
                             key={element['kind']}
-                            className="App-Dashboard-data-keyData-box"
+                            className="App-Dashboard-container-data-keyData-box"
                         >
                             <CaloriesIcon />
-                            <div className="App-Dashboard-data-keyData-box-data">
-                                <p className="App-Dashboard-data-keyData-box-data-nb">
+                            <div className="App-Dashboard-container-data-keyData-box-data">
+                                <p className="App-Dashboard-container-data-keyData-box-data-nb">
                                     {element['quantity']}
                                 </p>
-                                <p className="App-Dashboard-data-keyData-box-data-type">
+                                <p className="App-Dashboard-container-data-keyData-box-data-type">
                                     {element['kind']}
                                 </p>
                             </div>
@@ -33,14 +33,14 @@ export default function Macronutrients({ macronutrients }) {
                     ) : element['kind'] === 'Lipides' ? (
                         <div
                             key={element['kind']}
-                            className="App-Dashboard-data-keyData-box"
+                            className="App-Dashboard-container-data-keyData-box"
                         >
                             <FatIcon />
-                            <div className="App-Dashboard-data-keyData-box-data">
-                                <p className="App-Dashboard-data-keyData-box-data-nb">
+                            <div className="App-Dashboard-container-data-keyData-box-data">
+                                <p className="App-Dashboard-container-data-keyData-box-data-nb">
                                     {element['quantity']}
                                 </p>
-                                <p className="App-Dashboard-data-keyData-box-data-type">
+                                <p className="App-Dashboard-container-data-keyData-box-data-type">
                                     {element['kind']}
                                 </p>
                             </div>
@@ -48,14 +48,14 @@ export default function Macronutrients({ macronutrients }) {
                     ) : element['kind'] === 'Proteines' ? (
                         <div
                             key={element['kind']}
-                            className="App-Dashboard-data-keyData-box"
+                            className="App-Dashboard-container-data-keyData-box"
                         >
                             <ProteinIcon />
-                            <div className="App-Dashboard-data-keyData-box-data">
-                                <p className="App-Dashboard-data-keyData-box-data-nb">
+                            <div className="App-Dashboard-container-data-keyData-box-data">
+                                <p className="App-Dashboard-container-data-keyData-box-data-nb">
                                     {element['quantity']}
                                 </p>
-                                <p className="App-Dashboard-data-keyData-box-data-type">
+                                <p className="App-Dashboard-container-data-keyData-box-data-type">
                                     {element['kind']}
                                 </p>
                             </div>
@@ -63,14 +63,14 @@ export default function Macronutrients({ macronutrients }) {
                     ) : element['kind'] === 'Glucides' ? (
                         <div
                             key={element['kind']}
-                            className="App-Dashboard-data-keyData-box"
+                            className="App-Dashboard-container-data-keyData-box"
                         >
                             <CarbsIcon />
-                            <div className="App-Dashboard-data-keyData-box-data">
-                                <p className="App-Dashboard-data-keyData-box-data-nb">
+                            <div className="App-Dashboard-container-data-keyData-box-data">
+                                <p className="App-Dashboard-container-data-keyData-box-data-nb">
                                     {element['quantity']}
                                 </p>
-                                <p className="App-Dashboard-data-keyData-box-data-type">
+                                <p className="App-Dashboard-container-data-keyData-box-data-type">
                                     {element['kind']}
                                 </p>
                             </div>

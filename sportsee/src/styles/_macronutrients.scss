@@ -1,18 +1,17 @@
 @import './colors';
 
-.App-Dashboard-data-keyData-box {
+.App-Dashboard-container-data-keyData-box {
     width: 100%;
-    max-width: 258px;
-    height: 124px;
+    min-width: 100px;
+    height: fit-content;
     background-color: $white;
     border-radius: 5px;
     background-color: $lightBg;
     display: flex;
-    padding-left: 30px;
+    padding: 30px;
     align-items: center;
     @media (max-width: 1024px) {
-        height: 104px;
-        padding-left: 20px;
+        padding: 25px;
     }
     &-icon {
         width: 60px;

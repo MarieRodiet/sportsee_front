@@ -1,5 +1,5 @@
 import './../styles/_App.scss'
-import Nav from '../components/Nav';
+import TopNav from '../components/TopNav';
 import Dashboard from '../components/Dashboard';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <Nav />
+      <TopNav />
       <Dashboard urlForUseFetch={isMockedUrl ? "/data/user/" : "http://localhost:3000/user/"} />
     </div>
   )

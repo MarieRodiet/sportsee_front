@@ -1,12 +1,11 @@
 @import './colors.scss';
 
-.App-Dashboard-data-charts-average {
+.App-Dashboard-container-data-recharts-charts-average {
     position: relative;
+    
     &-title {
         position: absolute;
         z-index: 2;
-    }
-    .recharts-cartesian-axis-tick {
     }
     .recharts-rectangle {
         position: absolute;

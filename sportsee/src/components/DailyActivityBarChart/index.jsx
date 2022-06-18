@@ -29,8 +29,8 @@ export default function DailyActivityBarChart({ urlForUseFetch }) {
     )
     let formatedData = data && formatDailyActivity(data['sessions'])
     return (
-        <div className="App-Dashboard-data-dailyActivity">
-            <p className="App-Dashboard-data-dailyActivity-title">
+        <div className="App-Dashboard-container-data-recharts-dailyActivity">
+            <p className="App-Dashboard-container-data-recharts-dailyActivity-title">
                 Activité quotidienne
             </p>
             {formatedData ? (
@@ -106,7 +106,9 @@ export default function DailyActivityBarChart({ urlForUseFetch }) {
                     </BarChart>
                 </ResponsiveContainer>
             ) : hasError ? (
-                <p className="App-Dashboard-data-dailyActivity-error">Error</p>
+                <p className="App-Dashboard-container-data-recharts-dailyActivity-error">
+                    Error
+                </p>
             ) : isLoading ? (
                 <p>it is loading</p>
             ) : null}

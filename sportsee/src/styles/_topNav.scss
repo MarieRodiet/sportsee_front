@@ -1,0 +1,47 @@
+@import './colors.scss';
+.App-TopNav {
+    background-color: $black;
+    flex-direction: row;
+    width: 100%;
+    display: flex;
+    height: 91px;
+
+    &-Logo {
+        width: 225px;
+        display: flex;
+        justify-content: space-around;
+        &-container {
+            width: 50px;
+            height: 50px;
+            padding: 20px 0 0 20px;
+            svg {
+                path.body {
+                    color: $black;
+                }
+            }
+        }
+        &-text {
+            padding-top: 33px;
+            padding-left: 6px;
+            color: $red;
+        }
+    }
+    &-links {
+        width: calc(100% - 220px);
+        display: flex;
+        justify-content: space-around;
+        padding-top: 30px;
+        a {
+            color: $white;
+            font-size: 24px;
+            font-weight: 500;
+            text-decoration: none;
+            @media (max-width: 1024px) {
+                font-size: 22px;
+            }
+        }
+        a:hover {
+            color: $red;
+        }
+    }
+}

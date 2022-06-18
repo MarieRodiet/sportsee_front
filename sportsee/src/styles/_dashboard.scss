@@ -1,104 +1,148 @@
 @import './colors.scss';
 
 .App-Dashboard {
-    position: absolute;
-    top: 105px;
-    left: 116px;
-    bottom: 0;
-    right: 0;
-    width: calc(100% - 115px);
-    max-height: 90vh;
+    height: 100%;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-direction: row;
     @media (max-width: 1024px) {
-        width: calc(100% - 105px);
-        height: calc(100vh - 121px);
-        left: 100px;
     }
-    &-greeting {
-        margin-left: 2px;
-        padding: 1.6rem 0px 30px 10%;
-        max-height: 230px;
-        @media (max-width: 1024px) {
-            margin-top: 10px;
-            padding: 50px 0px 20px 9%;
-            max-height: 200px;
-        }
-        h1 {
-            font-size: 48px;
-            font-weight: 500;
-            display: inline-block;
-            @media (max-width: 1024px) {
-                font-size: 42px;
-            }
-        }
-        h2 {
-            width: 90%;
-            padding-top: 1.8rem;
-            font-size: 18px;
-            font-weight: 400;
-            color: $darkGray;
-            @media (max-width: 1024px) {
-                font-size: 17px;
-                padding-top: 30px;
-            }
-        }
-        &-name {
-            color: $red;
-            @media (max-width: 1024px) {
-                font-size: 42px;
-            }
-        }
-    }
+    &-LeftNav {
+        background-color: $black;
+        max-width: 117px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px;
 
-    &-data {
-        padding-left: 100px;
-        grid-gap: 2% 2vh;
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(4, 22%);
-        grid-template-rows: 320px 263px;
         @media (max-width: 1024px) {
-            height: calc(100vh - 300px);
-            grid-template-rows: 250px 200px;
-            padding-left: 80px;
         }
-        //835/320px
-        &-dailyActivity {
-            width: 100%;
-            max-width: 835px;
-            height: 95%;
-            background-color: $lightBg;
-            grid-column: 1/4;
-            border-radius: 5px;
-            justify-self: center;
-            padding: 20px 0;
-            justify-self: center;
-        }
-        &-charts {
-            width: 100%;
-            max-width: 835px;
-            grid-column: 1/4;
-            display: flex;
-            height: 93%;
-            justify-content: space-between;
-            align-items: flex-end;
-            grid-gap: 2%;
-            justify-self: center;
-            padding-bottom: 10px;
-        }
-        &-keyData {
-            width: 100%;
-            max-width: 258px;
-            height: 95%;
-            grid-column: 4/5;
-            grid-row: 1/3;
+
+        &-Icons {
+            height: 400px;
+            width: fit-content;
             display: flex;
             flex-direction: column;
+            align-content: space-around;
+            transform: translateY(15vh);
+            @media (max-width: 1024px) {
+                height: 300px;
+                transform: translateY(10vh);
+            }
+            &-Box {
+                cursor: pointer;
+                width: 64px;
+                height: 64px;
+                margin: 6px 0;
+                &:hover {
+                    svg path {
+                        fill: $black;
+                    }
+                }
+                @media (max-width: 1024px) {
+                    width: 60px;
+                    height: 60px;
+                    margin: 5px 0;
+                }
+            }
+        }
+        &-Text {
+            height: 24px;
+            width: 138px;
+            color: $white;
+            font-size: 12px;
+            font-weight: 500;
+            transform: translateX(-30px) rotate(-90deg);
+            position: absolute;
+            bottom: 100px;
+            @media (max-width: 1024px) {
+            }
+        }
+    }
+    &-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        &-greeting {
+            margin-top: 10px;
+            padding: 10px 100px 10px 100px;
+            width: 100%;
+            max-height: 230px;
+            @media (max-width: 1024px) {
+                max-height: 200px;
+                padding: 10px 50px 10px 50px;
+            }
+            h1 {
+                font-size: 48px;
+                font-weight: 500;
+                display: inline-block;
+                @media (max-width: 1024px) {
+                    font-size: 42px;
+                }
+            }
+            h2 {
+                width: 90%;
+                padding-top: 1.8rem;
+                font-size: 18px;
+                font-weight: 400;
+                color: $darkGray;
+                @media (max-width: 1024px) {
+                    font-size: 17px;
+                    padding-top: 30px;
+                }
+            }
+            &-name {
+                color: $red;
+                @media (max-width: 1024px) {
+                    font-size: 42px;
+                }
+            }
+        }
+        &-data {
+            width: 100%;
+            display: flex;
             justify-content: space-between;
-            justify-self: start;
-            //258/124
+            padding: 10px 100px 10px 100px;
+            @media (max-width: 1024px) {
+            }
+            //835/320px
+            &-recharts {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                &-dailyActivity {
+                    max-width: 835px;
+                    min-width: 500px;
+                    width: 100%;
+                    height: 320px;
+                    background-color: $lightBg;
+                    border-radius: 5px;
+                    justify-self: center;
+                    padding: 20px 0;
+                    justify-self: center;
+                }
+                &-charts {
+                    width: 100%;
+                    min-width: 700px;
+                    display: flex;
+                    height: 220px;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    justify-self: center;
+                    padding-bottom: 10px;
+                }
+            }
+            &-keyData {
+                width: fit-content;
+                height: 600px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                justify-self: start;
+                //258/124
+            }
         }
     }
 }
