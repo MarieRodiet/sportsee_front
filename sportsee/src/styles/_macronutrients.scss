@@ -3,12 +3,12 @@
 .App-Dashboard-container-data-keyData-box {
     width: 100%;
     min-width: 100px;
-    height: fit-content;
+    height: 12vh;
     background-color: $white;
     border-radius: 5px;
     background-color: $lightBg;
     display: flex;
-    padding: 30px;
+justify-content: center;
     align-items: center;
     @media (max-width: 1024px) {
         padding: 25px;
