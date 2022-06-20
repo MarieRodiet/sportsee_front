@@ -11,7 +11,7 @@ import {
 import { useParams } from 'react-router-dom'
 import useFetch from '../../services/Api/useFetch.js'
 import formatDailyActivity from '../../services/Formaters/formatDailyActivities.js'
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import './../../styles/_dailyActivities.scss'
 import AverageLineChart from '../AverageLineChart/index.jsx'
 
@@ -132,10 +132,10 @@ const CustomTooltip = ({ active, payload }) => {
 }
 
 CustomTooltip.propTypes = {
-    active: propTypes.bool,
-    payload: propTypes.array,
+    active: PropTypes.bool,
+    payload: PropTypes.array,
 }
 
 AverageLineChart.propTypes = {
-    urlForUseFetch: propTypes.string.isRequired,
+    urlForUseFetch: PropTypes.string.isRequired,
 }

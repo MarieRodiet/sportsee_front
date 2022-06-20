@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom'
 import Error from '../Error'
 import useFetch from '../../services/Api/useFetch.js'
 import formatData from './../../services/Formaters/formatData.js'
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 /**
  *
@@ -144,5 +144,5 @@ function Dashboard({ urlForUseFetch }) {
 export default Dashboard
 
 Dashboard.propTypes = {
-    urlForUseFetch: propTypes.string.isRequired,
+    urlForUseFetch: PropTypes.string.isRequired,
 }

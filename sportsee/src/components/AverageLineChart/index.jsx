@@ -12,7 +12,7 @@ import useFetch from '../../services/Api/useFetch'
 import formatAverage from '../../services/Formaters/formatAverage'
 import './../../styles/_charts.scss'
 import './../../styles/_averageLineChart.scss'
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 /**
  *
@@ -103,14 +103,14 @@ const CustomCursor = (props) => {
 }
 
 AverageLineChart.propTypes = {
-    urlForUseFetch: propTypes.string.isRequired,
+    urlForUseFetch: PropTypes.string.isRequired,
 }
 
 CustomTooltip.propTypes = {
-    active: propTypes.bool,
-    payload: propTypes.array,
+    active: PropTypes.bool,
+    payload: PropTypes.array,
 }
 
 CustomCursor.propTypes = {
-    props: propTypes.object,
+    props: PropTypes.object,
 }

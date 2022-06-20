@@ -1,4 +1,4 @@
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 /**
  * 
@@ -15,5 +15,5 @@ export default function formatDailyActivity(sessions) {
 }
 
 formatDailyActivity.propTypes = {
-    sessions: propTypes.array.isRequired
+    sessions: PropTypes.array.isRequired
 }

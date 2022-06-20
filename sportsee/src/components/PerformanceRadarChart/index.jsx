@@ -11,8 +11,7 @@ import './../../styles/_charts.scss'
 import useFetch from '../../services/Api/useFetch'
 import { useParams } from 'react-router-dom'
 import formatPerformance from '../../services/Formaters/formatPerformance'
-import propTypes from 'prop-types'
-import Macronutrients from '../Macronutrients'
+import PropTypes from 'prop-types'
 /**
  *
  * @param {string} urlForUseFetch
@@ -68,6 +67,6 @@ export default function PerformanceRadarChart({ urlForUseFetch }) {
     )
 }
 
-Macronutrients.propTypes = {
-    macronutrients: propTypes.object.isRequired,
+PerformanceRadarChart.propTypes = {
+    urlForUseFetch: PropTypes.string.isRequired,
 }

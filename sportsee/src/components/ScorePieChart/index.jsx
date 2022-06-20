@@ -1,6 +1,6 @@
 import { PieChart, Pie, Cell } from 'recharts'
 import './../../styles/_charts.scss'
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 /**
  *
  * @param {object} score
@@ -54,5 +54,5 @@ export default function ScorePieChart(score) {
     )
 }
 ScorePieChart.propTypes = {
-    score: propTypes.number,
+    score: PropTypes.number,
 }

@@ -1,4 +1,4 @@
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 /**
  * @param {array} data - data coming from useFetch on server
@@ -21,5 +21,5 @@ export default function formatPerformance(data) {
 }
 
 formatPerformance.propTypes = {
-    data: propTypes.array.isRequired
+    data: PropTypes.array.isRequired
 }

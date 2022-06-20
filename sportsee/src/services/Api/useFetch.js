@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 /**
  * 
@@ -42,13 +42,13 @@ function getUrl(url, dataKind, id) {
 }
 
 useFetch.propTypes = {
-    url: propTypes.string.isRequired
+    url: PropTypes.string.isRequired
 };
 
 getUrl.propTypes = {
-    url: propTypes.string.isRequired,
-    id: propTypes.number.isRequired,
-    dataKind: propTypes.string.isRequired
+    url: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    dataKind: PropTypes.string.isRequired
 }
 
 

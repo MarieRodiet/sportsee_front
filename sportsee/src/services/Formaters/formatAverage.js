@@ -1,4 +1,4 @@
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 /**
  * 
@@ -25,5 +25,5 @@ export default function formatAverage(data) {
 }
 
 formatAverage.propTypes = {
-    data:propTypes.array.isRequired
+    data: PropTypes.array.isRequired
 }
