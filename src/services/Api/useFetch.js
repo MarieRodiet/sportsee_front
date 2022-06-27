@@ -29,7 +29,7 @@ export default function useFetch(url, dataKind, id) {
                 setError(true)
             })
             .finally(() => setLoading(false))
-    }, [])
+    }, [toFetch])
     return { data, isLoading, hasError }
 }
 
