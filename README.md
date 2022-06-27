@@ -1,18 +1,21 @@
-# SportSee 
----
- ##### Projet 12 - Web Development Javascript | React 
+# SportSee
 
-![dashboard](./sportsee/dashboard.png)
+---
+
+##### Projet 12 - Web Development Javascript | React
+
+![dashboard](./dashboard.png)
 
 ### General Information &nbsp; ℹ️
 
 This project is set up using data fetched from JSON files located inside the public/data folder. This way, you only need the FRONT END and therefore only need to follow the first part of instructions below. If you would like to use the data from your local server, then keep reading and configurating! 🚀
 
 ### Prerequisite &nbsp; ℹ️
-- NPM v8.5.5
-- NodeJS v16.15.0 OR YARN
-- VSCode
-- Git
+
+-   NPM v8.5.5
+-   NodeJS v16.15.0 OR YARN
+-   VSCode
+-   Git
 
 ## Launching the FRONT END project
 
@@ -26,6 +29,6 @@ This project is set up using data fetched from JSON files located inside the pub
 
 1. Install this [repo](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard) and follow the instructions on its README file.
 2. Visit this [endpoint](http://localhost:3000/user/12) to check that the server is up and running
-3. Go to the sportsee FRONT END repo, find src/pages/App.js and change the variable   
-`const isMockedUrl = false`
+3. Go to the sportsee FRONT END repo, find src/pages/App.js and change the variable  
+   `const isMockedUrl = false`
 4. Refresh the page
