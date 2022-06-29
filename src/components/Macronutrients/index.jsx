@@ -3,7 +3,6 @@ import { ReactComponent as CaloriesIcon } from './../../assets/calories-icon.svg
 import { ReactComponent as FatIcon } from './../../assets/fat-icon.svg'
 import { ReactComponent as ProteinIcon } from './../../assets/protein-icon.svg'
 import { ReactComponent as CarbsIcon } from './../../assets/carbs-icon.svg'
-import { PropTypes } from 'prop-types'
 
 /**
  *
@@ -82,6 +81,3 @@ export default function Macronutrients({ macronutrients }) {
     )
 }
 
-Macronutrients.propTypes = {
-    macronutrients: PropTypes.object.isRequired,
-}
