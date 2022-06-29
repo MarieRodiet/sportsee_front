@@ -8,9 +8,9 @@ import { HashRouter, BrowserRouter, Routes, Route } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <React.StrictMode>
-        <HashRouter>
+        <HashRouter basename="/user">
             <Routes>
-                <Route path="/user/:id" element={<App />} />
+                <Route path="/:id" element={<App />} />
             </Routes>
         </HashRouter>
     </React.StrictMode>
